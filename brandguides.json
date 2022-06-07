@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "628de212aee4b4285926ccf4"
+  },
+  "name": "DaVinci",
+  "firstimage": "firstimage-1654380261565aieruh.jpg         ",
+  "description": "Welcome to our The Davinci Agency's brand style guide. This brand guide is made by us, a group of 5 students from Fontys University of Applied Sciences",
+  "creator": "Test",
+  "bgcolor": "lightgrey",
+  "navbgcolor": "black",
+  "logoHeader": "Logo",
+  "logoDescription": "This section features the logos from Davinci and the way in which you need to use them.",
+  "logoimage": "logoimage-1654380261614aieruh.jpg         ",
+  "fontHeader": "Font",
+  "fontDescription": "This section features the fonts from Davinci and the way in which you need to use them.",
+  "fontimage": "fontimage-1654380261616aieruh.jpg         ",
+  "colorsHeader": "Colors",
+  "colorsDescription": "Test",
+  "colorsimage": "colorsimage-1654380261622aieruh.jpg         ",
+  "mediaHeader": "Media",
+  "mediaDescription": "Test",
+  "mediaimage": "mediaimage-1654380261624aieruh.jpg   ",
+  "created": {
+    "$date": {
+      "$numberLong": "1653465618211"
+    }
+  },
+  "__v": 0,
+  "layout": "side",
+  "optionalOneDescription": "sound",
+  "optionalOneHeader": "Sound",
+  "optionalOneimage": "",
+  "optionalTwoDescription": "motion",
+  "optionalTwoHeader": " Motion",
+  "optionalTwoimage": ""
+}]
