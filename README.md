@@ -1,4 +1,4 @@
-# group_project
+# Group Project
 
 
 Install MongoDB and MongoDB Compass to your computer.
