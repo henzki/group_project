@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/add.css">
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <div class="topnav-right">
+            <a href="account.html" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
+            <a href="#" onclick="darker()">Night mode</a>
+        </div>
+        <a th:inline="text">username</a>
+        <div class="topnav-centered">
+            <a class="nav-link" href="/add" style="margin-left: 300px;">New</a>
+            <a class="nav-link" href="/" style="margin-left: 100px;">Open</a>
+            <a class="nav-link" href="/share" style="margin-left: 100px;">Share</a>
+        </div>
+
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="addmain">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div>
+                        <div style="padding-top: 100px;">
+                            <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                                <div>
+                                    <label for="name">Project name:</label>
+                                    <br>
+                                    <input type="text" name="name" required />
+                                </div>
+
+                                <label for="firstimage" class="form-label">Select Main Logo:</label>
+                                <div class="file-upload">
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);"
+                                            accept="image/*" name="firstimage" />
+                                        <div class="drag-text">
+                                            <h3>Drag and drop a file or select Add</h3>
+                                        </div>
+                                    </div>
+                                    <button class="file-upload-btn" type="button"
+                                        onclick="$('.file-upload-input').trigger( 'click' )">Add</button>
+                                    <div class="file-upload-content">
+                                        <img class="file-upload-image" src="#" alt="your image" />
+                                        <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">Remove
+                                                <span class="image-title">Uploaded Image</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="bgcolor">Creator</label>
+                                    <input type="text" name="creator" />
+                                </div>
+
+                                <div>
+                                    <label for="bgcolor">Background-color</label>
+                                    <br>
+                                    <input type="color" name="bgcolor" required />
+                                </div>
+                                <div>
+                                    <label for="navbgcolor">Navigation Background-color</label>
+                                    <br>
+                                    <input type="color" name="navbgcolor" required />
+                                </div>
+
+                                <div>
+                                    <label for="layout">Layout</label>
+                                    <input type="text" name="layout" placeholder="Enter layout" required />
+                                </div>
+
+                                    <input type="submit" name="submit" value="Add project" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("table").DataTable({
+                order: [0, 'desc']
+            });
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.image-upload-wrap').hide();
+
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+
+                    $('.image-title').html(input.files[0].name);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function () {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function () {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+
+    </script>
+
+</body>
+
+</html>

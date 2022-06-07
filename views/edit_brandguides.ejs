@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: <%=brandguide.bgcolor %>;
+        }
+
+        input {
+            background-color: <%=brandguide.bgcolor %>;
+        }
+
+        .topnav,
+        .sidenav {
+            background-color: <%=brandguide.navbgcolor %>;
+        }
+
+        .topactive,
+        .sideactive {
+            background-color: <%=brandguide.bgcolor %>;
+        }
+
+        .topactive {
+            border-bottom: 1px solid <%=brandguide.bgcolor %>;
+        }
+
+        .topmain,
+        .sidemain {
+            background-color: <%=brandguide.bgcolor %>;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="../main.js"></script>
+    <script src="https://kit.fontawesome.com/704ff50790.js" crossorigin="anonymous">
+    </script>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div class="<%= brandguide.layout %>nav">
+        <img src="/uploads/image/<%= brandguide.firstimage %>" width="200px" height="200px" />
+        <a href="index.html" class="<%= brandguide.layout %>active"><span>Intro</span></a>
+        <a div class="<%= brandguide.layout %>nav-item">
+            <%= brandguide.logoHeader %>
+        </a>
+        <a div class="<%= brandguide.layout %>nav-item">
+            <%= brandguide.fontHeader %>
+        </a>
+        <a div class="<%= brandguide.layout %>nav-item">
+            <%= brandguide.colorsHeader %>
+        </a>
+        <a div class="<%= brandguide.layout %>nav-item">
+            <%= brandguide.mediaHeader %>
+        </a>
+        <div class="<%= brandguide.layout %>nav-end">
+        </div>
+    </div>
+
+
+    <div class="<%= brandguide.layout %>main">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div>
+                        <div>
+                            <h3 class="text-dark">Edit (<%= brandguide.name %> ) project</h3>
+                        </div>
+                        <div>
+                            <form action="/update/<%= brandguide._id %> " method="post" id="add-form"
+                                enctype="multipart/form-data">
+                                <div>
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" value="<%= brandguide.name %>"
+                                        placeholder="Enter name" required />
+                                </div>
+                                <div>
+                                    <label for="firstimage" class="form-label">Select logo</label>
+                                    <input type="file" name="firstimage" />
+                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="100" />
+
+                                    <input type="hidden" name="old_firstimage" value="<%= brandguide.firstimage %> " />
+                                </div>
+                                <div>
+                                    <label for="description">Description</label>
+                                    <input type="text" name="description" value="<%= brandguide.description %>"
+                                        placeholder="Enter description" />
+                                </div>
+                                <div>
+                                    <label for="creator">Creator</label>
+                                    <input type="text" name="creator" value="<%= brandguide.creator %>"
+                                        placeholder="Enter creator" required />
+                                </div>
+                                <div>
+                                    <label for="bgcolor">Bgcolor</label>
+                                    <input type="text" name="bgcolor" value="<%= brandguide.bgcolor %>"
+                                        placeholder="Enter bgcolor" required />
+                                </div>
+                                <div>
+                                    <label for="navbgcolor">Navigation Bgcolor</label>
+                                    <input type="text" name="navbgcolor" value="<%= brandguide.navbgcolor %>"
+                                        placeholder="Enter navbgcolor" required />
+                                </div>
+                                <div>
+                                    <label for="layout">layout</label>
+                                    <input type="text" name="layout" value="<%= brandguide.layout %>"
+                                        placeholder="Enter layout" required />
+                                </div>
+                                <div>
+                                    <label for="logoHeader">Logo Header</label>
+                                    <input type="text" name="logoHeader" value="<%= brandguide.logoHeader %>"
+                                        placeholder="Enter Logo Header" />
+                                </div>
+                                <div>
+                                    <label for="logoDescription">Logo Description</label>
+                                    <input type="text" name="logoDescription" value="<%= brandguide.logoDescription %>"
+                                        placeholder="Enter Logo Description" />
+                                </div>
+                                <div>
+                                    <label for="logoimage" class="form-label">Select Logo Image</label>
+                                    <input type="file" name="logoimage" />
+                                    <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="100" />
+                                </div>
+                                <input type="hidden" name="old_logoimage" value="<%= brandguide.logoimage %> " />
+                                <div>
+                                    <label for="fontHeader">Font Header</label>
+                                    <input type="text" name="fontHeader" value="<%= brandguide.fontHeader %>"
+                                        placeholder="Enter Font Header" />
+                                </div>
+                                <div>
+                                    <label for="fontDescription">Font Description</label>
+                                    <input type="text" name="fontDescription" value="<%= brandguide.fontDescription %>"
+                                        placeholder="Enter Font Description" />
+                                </div>
+                                <div>
+                                    <label for="fontimage" class="form-label">Select Font Image</label>
+                                    <input type="file" name="fontimage" />
+                                    <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="100" />
+                                </div>
+                                <input type="hidden" name="old_fontimage" value="<%= brandguide.fontimage %> " />
+                                <div>
+                                    <label for="colorsHeader">Colors Header</label>
+                                    <input type="text" name="colorsHeader" value="<%= brandguide.colorsHeader %>"
+                                        placeholder="Enter Colors Header" />
+                                </div>
+                                <div>
+                                    <label for="colorsDescription">Colors Description</label>
+                                    <input type="text" name="colorsDescription"
+                                        value="<%= brandguide.colorsDescription %>"
+                                        placeholder="Enter Colors Description" />
+                                </div>
+                                <div>
+                                    <label for="colorsimage" class="form-label">Select Colors Image</label>
+                                    <input type="file" name="colorsimage" />
+                                    <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="100" />
+                                </div>
+                                <input type="hidden" name="old_colorsimage" value="<%= brandguide.colorsimage %> " />
+                                <div>
+                                    <label for="mediaHeader">Media Header</label>
+                                    <input type="text" name="mediaHeader" value="<%= brandguide.mediaHeader %>"
+                                        placeholder="Enter Media Header" />
+                                </div>
+                                <div>
+                                    <label for="mediaDescription">Media Description</label>
+                                    <input type="text" name="mediaDescription"
+                                        value="<%= brandguide.mediaDescription %>"
+                                        placeholder="Enter Media Description" />
+                                </div>
+                                <div>
+                                    <label for="mediaimage" class="form-label">Select Media Image</label>
+                                    <input type="file" name="mediaimage" />
+                                    <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="100" />
+                                </div>
+                                <div>
+                                    <label for="optionalOneHeader">optionalOneHeader</label>
+                                    <input type="text" name="optionalOneHeader"
+                                        value="<%= brandguide.optionalOneHeader %>"
+                                        placeholder="Enter optionalOneHeader" />
+                                </div>
+                                <div>
+                                    <label for="optionalOneDescription">optionalOneDescription</label>
+                                    <input type="text" name="optionalOneDescription"
+                                        value="<%= brandguide.optionalOneDescription %>"
+                                        placeholder="Enter optionalOneDescription" />
+                                </div>
+                                <div>
+                                    <label for="optionalOneimage" class="form-label">Select optionalOneimage</label>
+                                    <input type="file" name="optionalOneimage" />
+                                    <img src="/uploads/optionalOneimage/<%= brandguide.optionalOneimage %> "
+                                        width="100" />
+                                </div>
+                                <input type="hidden" name="old_optionalOneimage"
+                                    value="<%= brandguide.optionalOneimage %> " />
+                                <div>
+
+                                    <div>
+                                        <label for="optionalTwoHeader">optionalTwoHeader</label>
+                                        <input type="text" name="optionalTwoHeader"
+                                            value="<%= brandguide.optionalTwoHeader %>"
+                                            placeholder="Enter optionalTwoHeader" />
+                                    </div>
+                                    <div>
+                                        <label for="optionalTwoDescription">optionalTwoDescription</label>
+                                        <input type="text" name="optionalTwoDescription"
+                                            value="<%= brandguide.optionalTwoDescription %>"
+                                            placeholder="Enter optionalTwoDescription" />
+                                    </div>
+                                    <div>
+                                        <label for="optionalTwoimage" class="form-label">Select optionalTwoimage</label>
+                                        <input type="file" name="optionalTwoimage" />
+                                        <img src="/uploads/optionalTwoimage/<%= brandguide.optionalTwoimage %> "
+                                            width="100" />
+                                    </div>
+                                    <input type="hidden" name="old_optionalTwoimage"
+                                        value="<%= brandguide.optionalTwoimage %> " />
+                                    <div>
+
+                                        <input type="submit" name="submit" value="Update brandguide" />
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("table").DataTable({
+                order: [0, 'desc']
+            });
+        });
+
+    </script>
+</body>
+
+</html>

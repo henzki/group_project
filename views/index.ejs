@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <div class="topnav-right">
+            <a href="account.html" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
+            <a href="#" onclick="darker()">Night mode</a>
+        </div>
+        <a th:inline="text">username</a>
+        <div class="topnav-centered">
+            <a class="nav-link" href="/add" style="margin-left: 300px;">New</a>
+            <a class="nav-link" href="/" style="margin-left: 100px;">Open</a>
+            <a class="nav-link" href="/share" style="margin-left: 100px;">Share</a>
+        </div>
+
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class=main>
+        <div class="flex-container">
+
+            <% if (message) { %>
+                <div class=<%=message.type %>>
+                    <strong>
+                        <%= message.message %>
+                    </strong>
+                </div>
+                <% } %>
+
+                    <% if (brandguides !='' ) { %>
+
+                        <% brandguides.forEach((row, index)=> { %>
+                            <div class="flex-item">
+                                <div><a href="/view/<%= row._id %> "><img src="uploads/image/<%= row.firstimage %> "
+                                            width="250px" height="300px"
+                                            style="border: 2px solid #505050; border-radius: 20px;"> </a>
+                                </div>
+                                <div style="padding-top: 10px; font-size:23px;">
+                                    <%= row.name %>
+                                </div>
+
+                                <div style="padding-top: 2yyy0px;">
+                                    <a href="/edit/<%= row._id %> " class="text-success"><img src="../images/edit.png"
+                                            width="30px" height="30px"></a>
+                                    <button onclick="document.getElementById('<%= row._id %>').style.display='block'"><img
+                                            src="../images/delete.png" width="30px" height="30px"></button>
+
+                                    <div id="<%= row._id %>" class="modal">
+
+                                        <form class="modal-content">
+                                            <div class="container">
+                                                <h3>Delete Project</h3>
+                                                <p>Are you sure you want to delete "<%= row.name %>" project?</p>
+                                                <img src="uploads/image/<%= row.firstimage %>" width="150px"
+                                                    height="150px" style="border-radius:35px;">
+                                                <div class="clearfix">
+                                                    <a href="/delete/<%= row._id %> " class="text-danger"><button
+                                                            type="button"
+                                                            onclick="document.getElementById('<%= row._id %>').style.display='none'"
+                                                            class="deletebtn">Yes</button></a>
+                                                    <button type="button"
+                                                        onclick="document.getElementById('<%= row._id %>').style.display='none'"
+                                                        class="cancelbtn">No</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+
+
+                                <% } else { %>
+                                    <h1>No branguides found</h1>
+                                    <% } %>
+
+                                    <a href="/add" div class="flex-item"><img src="../images/add.png" width="75px" height="75px"
+                                        style="padding: 125px;"></a>
+
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("table").DataTable({
+                order: [0, 'desc']
+            });
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

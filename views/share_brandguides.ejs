@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <div class="topnav-right">
+            <a href="account.html" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
+            <a href="#" onclick="darker()">Night mode</a>
+        </div>
+        <a th:inline="text">username</a>
+        <div class="topnav-centered">
+            <a class="nav-link" href="/add" style="margin-left: 300px;">New</a>
+            <a class="nav-link" href="/" style="margin-left: 100px;">Open</a>
+            <a class="nav-link" href="/share" style="margin-left: 100px;">Share</a>
+        </div>
+
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class=main>
+        <div class="flex-container-2">
+
+            <% if (message) { %>
+                <div class=<%=message.type %>>
+                    <strong>
+                        <%= message.message %>
+                    </strong>
+                </div>
+                <% } %>
+
+                    <% if (brandguides !='' ) { %>
+
+                        <% brandguides.forEach((row, index)=> { %>
+                            <div class="flex-item-2">
+                                <div class="column">
+                                    <div class="column-2">
+                                        <div><a href="/view/<%= row._id %> "><img
+                                                    src="uploads/image/<%= row.firstimage %> " width="200px"
+                                                    height="200px"
+                                                    style="border: 1px solid #505050; border-radius: 20px;"> </a>
+                                        </div>
+                                        <div style="padding-top: 10px; font-size:23px;">
+                                            <%= row.name %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="column-3">
+                                        <div style="margin-top: 30px; margin-bottom: 50px;"><img
+                                                src="../images/share.png" width="25px" height="25px">  Share link</a>
+                                        </div>
+
+                                        <input type="text" value="http://localhost:5000/view/<%= row._id %>"
+                                            id="myInput" class="link-first">
+                                        <a onclick="myFunction()" class="link-second"><img src="../images/link.png" width="15px"
+                                                height="15px"> 
+                                            copy</a>
+                                        <p>(Note: to gain access to shared link authorization is required)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+
+
+                                <% } else { %>
+                                    <h1>No branguides found</h1>
+                                    <% } %>
+
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("table").DataTable({
+                order: [0, 'desc']
+            });
+        });
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
+</body>
+
+</html>
