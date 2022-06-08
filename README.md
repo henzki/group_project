@@ -3,6 +3,10 @@
 
 Install MongoDB and MongoDB Compass to your computer.
 
+https://www.mongodb.com/try/download/community
+
+https://www.mongodb.com/products/compass
+
 Import the following file from project in your MongoDB Compass:
 
 - brandguides.json
