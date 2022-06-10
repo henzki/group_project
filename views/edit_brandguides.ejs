@@ -5,6 +5,7 @@
     <style>
         body {
             background-color: <%=brandguide.bgcolor %>;
+            color: <%=brandguide.fontcolor %>;
         }
 
         input {
@@ -14,6 +15,28 @@
         .topnav,
         .sidenav {
             background-color: <%=brandguide.navbgcolor %>;
+        }
+
+        .sidenav-logo {
+            border-right: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .sidenav-item {
+            border-right: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .sidenav-end {
+            border-right: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .sideactive {
+            border-bottom: 1px solid <%=brandguide.fontcolor %>;
+            border-top: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .topnav a,
+        .sidenav a {
+            color: <%=brandguide.fontcolor %>;
         }
 
         .topactive,
@@ -47,24 +70,33 @@
 
 <body>
     <div class="<%= brandguide.layout %>nav">
-        <img src="/uploads/image/<%= brandguide.firstimage %>" width="200px" height="200px" />
-        <a href="index.html" class="<%= brandguide.layout %>active"><span>Intro</span></a>
-        <a div class="<%= brandguide.layout %>nav-item">
-            <%= brandguide.logoHeader %>
-        </a>
-        <a div class="<%= brandguide.layout %>nav-item">
-            <%= brandguide.fontHeader %>
-        </a>
-        <a div class="<%= brandguide.layout %>nav-item">
-            <%= brandguide.colorsHeader %>
-        </a>
-        <a div class="<%= brandguide.layout %>nav-item">
-            <%= brandguide.mediaHeader %>
-        </a>
+        <div class="<%= brandguide.layout %>nav-logo">
+            <a href="/view/<%= brandguide._id %>"><img src="/uploads/image/<%= brandguide.firstimage %>"
+                    alt="Davinci text" style="width:200px;height:200;"></a>
+        </div>
+        <div class="<%= brandguide.layout %>nav-items">
+            <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>active"><span>Intro</span></a>
+            <a href="/logo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.logoHeader %>
+            </a>
+            <a href="/font/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.fontHeader %>
+            </a>
+            <a href="/color/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.colorsHeader %>
+            </a>
+            <a href="/media/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.mediaHeader %>
+            </a>
+        </div>
+        <!--OPTIONALS
+        <a href="/optionalone/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.colorsHeader %> </a>
+        <a href="/optionaltwo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.mediaHeader %> </a> 
+        -->
+
         <div class="<%= brandguide.layout %>nav-end">
         </div>
     </div>
-
 
     <div class="<%= brandguide.layout %>main">
         <div class="container">
@@ -100,12 +132,17 @@
                                         placeholder="Enter creator" required />
                                 </div>
                                 <div>
-                                    <label for="bgcolor">Bgcolor</label>
+                                    <label for="fontcolor">Font Color</label>
+                                    <input type="text" name="fontcolor" value="<%= brandguide.fontcolor %>"
+                                        placeholder="Enter font color" required />
+                                </div>
+                                <div>
+                                    <label for="bgcolor">Background Color</label>
                                     <input type="text" name="bgcolor" value="<%= brandguide.bgcolor %>"
                                         placeholder="Enter bgcolor" required />
                                 </div>
                                 <div>
-                                    <label for="navbgcolor">Navigation Bgcolor</label>
+                                    <label for="navbgcolor">Navigation Background Color</label>
                                     <input type="text" name="navbgcolor" value="<%= brandguide.navbgcolor %>"
                                         placeholder="Enter navbgcolor" required />
                                 </div>
