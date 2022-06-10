@@ -173,9 +173,14 @@ input[type=submit] {
   min-height: 900px;
 }
 
-.image-first {
+.image-first img {
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+.image-content img{
+  width: 1000px;
+  height: 600px;
 }
 
 .text-content {

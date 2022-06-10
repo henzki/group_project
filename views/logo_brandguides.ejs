@@ -79,7 +79,8 @@
         <div class="<%= brandguide.layout %>nav-items">
             <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">Intro</a>
             <a href="/logo/<%= brandguide._id %>" class="<%= brandguide.layout %>active"><span>
-                <%= brandguide.logoHeader %></span>
+                    <%= brandguide.logoHeader %>
+                </span>
             </a>
             <a href="/font/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.fontHeader %>
@@ -112,9 +113,8 @@
                                 <%= brandguide.logoHeader %>
                             </h3>
                         </div>
-                        <div class=""><img src="/uploads/logoimage/<%= brandguide.logoimage %>" width="300px"
-                                height="300px" /></div>
-                        <div class="">
+                        <div class="image-content"><img src="/uploads/logoimage/<%= brandguide.logoimage %>" /></div>
+                        <div class="text-content">
                             <%= brandguide.logoDescription %>
                         </div>
                     </div>
