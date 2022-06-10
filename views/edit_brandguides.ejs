@@ -123,7 +123,8 @@
                                     <label for="firstimage" class="form-label">Select logo</label>
                                     <input type="file" name="firstimage" />
                                     <br>
-                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="200" style="padding-top: 20px;" />
+                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="200"
+                                        style="padding-top: 20px;" />
 
                                     <input type="hidden" name="old_firstimage" value="<%= brandguide.firstimage %> " />
                                 </div>
@@ -180,9 +181,11 @@
                                     <label for="logoimage" class="form-label">Select Logo Image</label>
                                     <input type="file" name="logoimage" />
                                     <br>
-                                    <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="200" style="padding-top: 40px;" />
+                                    <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="200"
+                                        style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_logoimage" value="<%= brandguide.logoimage %> " />
+                                <p>* Image will be displayed in 1000*600px</p>
 
                                 <h2>Fonts</h2>
 
@@ -200,9 +203,11 @@
                                     <label for="fontimage" class="form-label">Select Font Image</label>
                                     <input type="file" name="fontimage" />
                                     <br>
-                                    <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="200" style="padding-top: 40px;" />
+                                    <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="200"
+                                        style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_fontimage" value="<%= brandguide.fontimage %> " />
+                                <p>* Image will be displayed in 1000*600px</p>
 
                                 <h2>Colors</h2>
 
@@ -221,9 +226,11 @@
                                     <label for="colorsimage" class="form-label">Select Colors Image</label>
                                     <input type="file" name="colorsimage" />
                                     <br>
-                                    <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="200" style="padding-top: 40px;" />
+                                    <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="200"
+                                        style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_colorsimage" value="<%= brandguide.colorsimage %> " />
+                                <p>* Image will be displayed in 1000*600px</p>
 
                                 <h2>Media</h2>
 
@@ -242,8 +249,11 @@
                                     <label for="mediaimage" class="form-label">Select Media Image</label>
                                     <input type="file" name="mediaimage" />
                                     <br>
-                                    <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="200" style="padding-top: 40px;" />
+                                    <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="200"
+                                        style="padding-top: 40px;" />
+                                    <p>* Image will be displayed in 1000*600px</p>
                                 </div>
+
 
                                 <h2>Optionals</h2>
 
@@ -264,11 +274,12 @@
                                     <label for="optionalOneimage" class="form-label">Select optionalOneimage</label>
                                     <input type="file" name="optionalOneimage" />
                                     <br>
-                                    <img src="/uploads/optionalOneimage/<%= brandguide.optionalOneimage %> "
-                                        width="200" style="padding-top: 40px;" />
+                                    <img src="/uploads/optionalOneimage/<%= brandguide.optionalOneimage %> " width="200"
+                                        style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_optionalOneimage"
                                     value="<%= brandguide.optionalOneimage %> " />
+                                <p>* Image will be displayed in 1000*600px</p>
                                 <div>
 
                                     <div>
@@ -292,6 +303,7 @@
                                     </div>
                                     <input type="hidden" name="old_optionalTwoimage"
                                         value="<%= brandguide.optionalTwoimage %> " />
+                                    <p>* Image will be displayed in 1000*600px</p>
                                     <div>
 
                                         <input type="submit" name="submit" value="Update brandguide" />

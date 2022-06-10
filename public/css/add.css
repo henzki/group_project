@@ -12,6 +12,10 @@ body {
     margin: auto;
 }
 
+p {
+    font-size: 18px;
+}
+
 /*--------------NAVIGATION---------------------------*/
 
 .topnav {
@@ -46,7 +50,7 @@ body {
 /*--------------------INPUT---------------------------*/
 input[type=text] {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     height: 50px;
     width: 800px;
     color: #707070;
@@ -58,7 +62,7 @@ input[type=text] {
 
 input[type=submit] {
     font-family: 'Manrope', sans-serif;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
     border-radius: 30px;
     padding: 15px;
