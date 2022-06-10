@@ -27,6 +27,7 @@
         }
 
         .sidenav-end {
+            height: 265px;
             border-right: 1px solid <%=brandguide.fontcolor %>;
         }
 
@@ -77,7 +78,7 @@
                     alt="Davinci text" style="width:200px;height:200;"></a>
         </div>
         <div class="<%= brandguide.layout %>nav-items">
-            <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><span>Intro</span></a>
+            <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"></a>
             <a href="/logo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.logoHeader %>
             </a>
@@ -90,13 +91,8 @@
             <a href="/media/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.mediaHeader %>
             </a>
+            <a href="/optionalone/<%= brandguide._id %>" class="<%= brandguide.layout %>active"> <span>More</span></a>
         </div>
-        <!--OPTIONALS
-        <a href="/optionalone/<%= brandguide._id %>" class="<%= brandguide.layout %>active"><%= brandguide.colorsHeader %> </a>
-        <a href="/optionaltwo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.mediaHeader %> </a> 
-        -->
-
-
         <div class="<%= brandguide.layout %>nav-end">
         </div>
     </div>
@@ -108,7 +104,7 @@
                 <div>
                     <div>
                         <div>
-                            <h3 class="text-dark">
+                            <h3>
                                 <%= brandguide.optionalOneHeader %>
                             </h3>
                         </div>

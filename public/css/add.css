@@ -1,18 +1,20 @@
 body {
     font-family: 'Manrope', sans-serif;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 1000;
     margin-top: 30px;
     margin-left: 60px;
     margin-right: 60px;
 }
 
-  .addmain {
+.addmain {
     max-width: 800px;
     margin: auto;
-  }
+}
 
-  .topnav {
+/*--------------NAVIGATION---------------------------*/
+
+.topnav {
     width: 100%;
     overflow-x: hidden;
     border-bottom: 2px solid #505050;
@@ -39,6 +41,9 @@ body {
     display: none;
 }
 
+/*--------------NAVIGATION---------------------------*/
+
+/*--------------------INPUT---------------------------*/
 input[type=text] {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -62,6 +67,22 @@ input[type=submit] {
     color: white;
     background-color: black;
 }
+
+input[type=radio] {
+    display: inline-flex;
+    vertical-align: middle;
+    background-color: black;
+}
+
+input[type=radio] {
+    accent-color: black;
+}
+
+.layout img {
+    vertical-align: middle;
+}
+
+/*--------------------INPUT END---------------------------*/
 
 .file-upload {
     background-color: #ffffff;

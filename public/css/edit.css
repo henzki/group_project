@@ -3,9 +3,14 @@ body {
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
   }
-  
-  h3 {
+
+  h1 {
     font-size: 40px;
+  }
+
+  h2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   
   
@@ -59,13 +64,14 @@ body {
   
   
   .sidenav-end {
-    height: 295px;
+    height: 225px;
   }
   
   
   .sidemain {
     margin-left: 300px;
     /* Same as the width of the sidenav */
+    max-width: 800px;
     font-size: 22px;
     padding-left: 50px;
   }
@@ -120,6 +126,7 @@ body {
   }
   
   .topmain {
+    max-width: 800px;
     font-size: 22px;
     padding-left: 50px;
   }
@@ -152,6 +159,18 @@ body {
     color: white;
     background-color: black;
   }
+
+  input[type=radio] {
+    display: inline-flex;
+    vertical-align: middle;
+    background-color: black;
+    padding: 10px;
+    accent-color: rgb(0, 174, 255);
+}
+
+.layout img {
+    vertical-align: middle;
+}
   
   /*-----------------------------INPUT-END----------------------------------------*/
   

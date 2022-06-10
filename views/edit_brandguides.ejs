@@ -52,6 +52,14 @@
         .sidemain {
             background-color: <%=brandguide.bgcolor %>;
         }
+
+        h2 {
+            border-bottom: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        input[type=submit] {
+            border: 1px solid <%=brandguide.fontcolor %>;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,8 +79,8 @@
 <body>
     <div class="<%= brandguide.layout %>nav">
         <div class="<%= brandguide.layout %>nav-logo">
-            <a href="#" ><img src="/uploads/image/<%= brandguide.firstimage %>"
-                    alt="Davinci text" style="width:200px;height:200;"></a>
+            <a href="#"><img src="/uploads/image/<%= brandguide.firstimage %>" alt="Davinci text"
+                    style="width:200px;height:200;"></a>
         </div>
         <div class="<%= brandguide.layout %>nav-items">
             <a href="#" class="<%= brandguide.layout %>active"><span>Intro</span></a>
@@ -88,11 +96,8 @@
             <a href="#" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.mediaHeader %>
             </a>
+            <a href="#" class="<%= brandguide.layout %>nav-item">More</a>
         </div>
-        <!--OPTIONALS
-        <a href="/optionalone/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.colorsHeader %> </a>
-        <a href="/optionaltwo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.mediaHeader %> </a> 
-        -->
 
         <div class="<%= brandguide.layout %>nav-end">
         </div>
@@ -104,7 +109,7 @@
                 <div>
                     <div>
                         <div>
-                            <h3 class="text-dark">Edit (<%= brandguide.name %> ) project</h3>
+                            <h1>Edit '<%= brandguide.name %>' brandguide</h1>
                         </div>
                         <div>
                             <form action="/update/<%= brandguide._id %> " method="post" id="add-form"
@@ -117,7 +122,8 @@
                                 <div>
                                     <label for="firstimage" class="form-label">Select logo</label>
                                     <input type="file" name="firstimage" />
-                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="100" />
+                                    <br>
+                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="200" style="padding-top: 20px;" />
 
                                     <input type="hidden" name="old_firstimage" value="<%= brandguide.firstimage %> " />
                                 </div>
@@ -131,10 +137,13 @@
                                     <input type="text" name="creator" value="<%= brandguide.creator %>"
                                         placeholder="Enter creator" required />
                                 </div>
-                                <div>
-                                    <label for="fontcolor">Font Color</label>
-                                    <input type="text" name="fontcolor" value="<%= brandguide.fontcolor %>"
-                                        placeholder="Enter font color" required />
+                                <div style="margin-bottom: 50px;">
+                                    <h4>Font Color:</h4>
+                                    <input class="radio" type="radio" name="fontcolor" value="black" checked>
+                                    <label>Black</label>
+                                    <input class="radio" type="radio" name="fontcolor" value="white"
+                                        style="margin-left: 50px;">
+                                    <label>White</label>
                                 </div>
                                 <div>
                                     <label for="bgcolor">Background Color</label>
@@ -146,11 +155,17 @@
                                     <input type="text" name="navbgcolor" value="<%= brandguide.navbgcolor %>"
                                         placeholder="Enter navbgcolor" required />
                                 </div>
-                                <div>
-                                    <label for="layout">layout</label>
-                                    <input type="text" name="layout" value="<%= brandguide.layout %>"
-                                        placeholder="Enter layout" required />
+                                <div class="layout">
+                                    <h4>Layout:</h4>
+                                    <input class="radio" type="radio" name="layout" value="side" checked>
+                                    <label>Side</label>
+                                    <input class="radio" type="radio" name="layout" value="top"
+                                        style="margin-left: 50px;">
+                                    <label>Top</label>
                                 </div>
+
+                                <h2>Logos</h2>
+
                                 <div>
                                     <label for="logoHeader">Logo Header</label>
                                     <input type="text" name="logoHeader" value="<%= brandguide.logoHeader %>"
@@ -164,9 +179,13 @@
                                 <div>
                                     <label for="logoimage" class="form-label">Select Logo Image</label>
                                     <input type="file" name="logoimage" />
-                                    <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="100" />
+                                    <br>
+                                    <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="200" style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_logoimage" value="<%= brandguide.logoimage %> " />
+
+                                <h2>Fonts</h2>
+
                                 <div>
                                     <label for="fontHeader">Font Header</label>
                                     <input type="text" name="fontHeader" value="<%= brandguide.fontHeader %>"
@@ -180,9 +199,13 @@
                                 <div>
                                     <label for="fontimage" class="form-label">Select Font Image</label>
                                     <input type="file" name="fontimage" />
-                                    <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="100" />
+                                    <br>
+                                    <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="200" style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_fontimage" value="<%= brandguide.fontimage %> " />
+
+                                <h2>Colors</h2>
+
                                 <div>
                                     <label for="colorsHeader">Colors Header</label>
                                     <input type="text" name="colorsHeader" value="<%= brandguide.colorsHeader %>"
@@ -197,9 +220,13 @@
                                 <div>
                                     <label for="colorsimage" class="form-label">Select Colors Image</label>
                                     <input type="file" name="colorsimage" />
-                                    <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="100" />
+                                    <br>
+                                    <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="200" style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_colorsimage" value="<%= brandguide.colorsimage %> " />
+
+                                <h2>Media</h2>
+
                                 <div>
                                     <label for="mediaHeader">Media Header</label>
                                     <input type="text" name="mediaHeader" value="<%= brandguide.mediaHeader %>"
@@ -214,8 +241,13 @@
                                 <div>
                                     <label for="mediaimage" class="form-label">Select Media Image</label>
                                     <input type="file" name="mediaimage" />
-                                    <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="100" />
+                                    <br>
+                                    <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="200" style="padding-top: 40px;" />
                                 </div>
+
+                                <h2>Optionals</h2>
+
+
                                 <div>
                                     <label for="optionalOneHeader">optionalOneHeader</label>
                                     <input type="text" name="optionalOneHeader"
@@ -231,8 +263,9 @@
                                 <div>
                                     <label for="optionalOneimage" class="form-label">Select optionalOneimage</label>
                                     <input type="file" name="optionalOneimage" />
+                                    <br>
                                     <img src="/uploads/optionalOneimage/<%= brandguide.optionalOneimage %> "
-                                        width="100" />
+                                        width="200" style="padding-top: 40px;" />
                                 </div>
                                 <input type="hidden" name="old_optionalOneimage"
                                     value="<%= brandguide.optionalOneimage %> " />
@@ -253,8 +286,9 @@
                                     <div>
                                         <label for="optionalTwoimage" class="form-label">Select optionalTwoimage</label>
                                         <input type="file" name="optionalTwoimage" />
+                                        <br>
                                         <img src="/uploads/optionalTwoimage/<%= brandguide.optionalTwoimage %> "
-                                            width="100" />
+                                            width="200" style="padding-top: 40px;" />
                                     </div>
                                     <input type="hidden" name="old_optionalTwoimage"
                                         value="<%= brandguide.optionalTwoimage %> " />

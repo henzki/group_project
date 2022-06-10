@@ -59,7 +59,7 @@ h3 {
 
 
 .sidenav-end {
-  height: 295px;
+  min-height: 232px;
 }
 
 

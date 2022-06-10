@@ -137,28 +137,22 @@ input[type=submit] {
 /*-------------------------------INPUT END------------------------------------------*/
 
 .link-second {
+    padding: 10px;
+    margin-top: 5px;
     margin-left:0;
     border: 1.5px solid black;
     border-top-right-radius: 15px 15px;
     border-bottom-right-radius: 15px 15px;
-    border-left: transparent;
+    border-left: black;
 }
 
 .link-first {
-    padding: 10px;
+    padding: 13px;
     border: 1.5px solid black;
     border-top-left-radius: 15px 15px;
     border-bottom-left-radius: 15px 15px;
     color: #00C0FE;
     text-decoration: none;
-}
-
-.link-second {
-    padding: 10px;
-    border: 1.5px solid black;
-    border-top-right-radius: 15px 15px;
-    border-bottom-right-radius: 15px 15px;
-    border-left: transparent;
 }
 
 /*---------------------MESSAGE FOR ADDING, UPDATING AND DELETING--------------------------------*/
@@ -177,10 +171,6 @@ button {
     border: none;
     cursor: pointer;
     opacity: 1;
-}
-
-button:hover {
-    opacity: 0.8;
 }
 
 /* Float cancel and delete buttons and add an equal width */

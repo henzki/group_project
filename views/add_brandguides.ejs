@@ -67,14 +67,16 @@
                                     </div>
                                 </div>
 
-                                <div>
+                                <div style="margin-top: 50px;">
                                     <label for="bgcolor">Creator</label>
                                     <input type="text" name="creator" />
                                 </div>
-                                <div>
-                                    <label for="fontcolor">Font Color</label>
-                                    <br>
-                                    <input type="text" name="fontcolor" required />
+                                <div style="margin-bottom: 50px;">
+                                    <h4>Font Color</h4>
+                                    <input class="radio" type="radio" name="fontcolor" value="black" checked>
+                                    <label style="margin-left: 20px; font-size:23px;">Black</label>
+                                    <input class="radio" type="radio" name="fontcolor" value="white" style="margin-left: 50px;">
+                                    <label style="margin-left: 20px; font-size:23px;">White</label>
                                 </div>
 
                                 <div>
@@ -88,9 +90,12 @@
                                     <input type="text" name="navbgcolor" required />
                                 </div>
 
-                                <div>
-                                    <label for="layout">Layout</label>
-                                    <input type="text" name="layout" placeholder="Enter layout" required />
+                                <div class="layout">
+                                    <h4>Layout:</h4>
+                                    <input class="radio" type="radio" name="layout" value="side" checked>
+                                    <img src="../images/side-layout.png" width="120px" height="120px" style="margin-left:20px;">
+                                    <input class="radio" type="radio" name="layout" value="top" style="margin-left: 50px;">
+                                    <img src="../images/top-layout.png" width="120px" height="120px" style="margin-left:20px;">
                                 </div>
 
                                     <input type="submit" name="submit" value="Add project" />
