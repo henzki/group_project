@@ -3,28 +3,56 @@
 
 <head>
     <style>
-
         /* --CHANGES THE COLORS ON THE PAGE-- */
         body {
-            background-color: <%= brandguide.bgcolor %>;
+            background-color: <%=brandguide.bgcolor %>;
+            color: <%=brandguide.fontcolor %>;
         }
 
         input {
-            background-color: <%= brandguide.bgcolor %>;
+            background-color: <%=brandguide.bgcolor %>;
         }
-        .topnav, .sidenav{
-            background-color: <%= brandguide.navbgcolor %>;
+
+        .topnav,
+        .sidenav {
+            background-color: <%=brandguide.navbgcolor %>;
         }
-        .topactive, .sideactive {
-            background-color: <%= brandguide.bgcolor %>;
+
+        .sidenav-logo {
+            border-right: 1px solid <%=brandguide.fontcolor %>;
         }
+
+        .sidenav-item {
+            border-right: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .sidenav-end {
+            border-right: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .sideactive {
+            border-bottom: 1px solid <%=brandguide.fontcolor %>;
+            border-top: 1px solid <%=brandguide.fontcolor %>;
+        }
+
+        .topnav a,
+        .sidenav a {
+            color: <%=brandguide.fontcolor %>;
+        }
+
+        .topactive,
+        .sideactive {
+            background-color: <%=brandguide.bgcolor %>;
+        }
+
         .topactive {
-            border-bottom: 1px solid <%= brandguide.bgcolor %>;
+            border-bottom: 1px solid <%=brandguide.bgcolor %>;
         }
-        .topmain, .sidemain {
-            background-color: <%= brandguide.bgcolor %>;
+
+        .topmain,
+        .sidemain {
+            background-color: <%=brandguide.bgcolor %>;
         }
-        
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,15 +69,30 @@
     </title>
 
 </head>
+
 <body>
     <div class="<%= brandguide.layout %>nav">
-        <img src="/uploads/image/<%= brandguide.firstimage %>" width="200px" height="200px"/>
-        <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><span>Intro</span></a>
-        <a href="/logo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.logoHeader %> </a>
-        <a href="/font/<%= brandguide._id %>" class="<%= brandguide.layout %>active"><%= brandguide.fontHeader %> </a>
-        <a href="/color/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.colorsHeader %> </a>
-        <a href="/media/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.mediaHeader %> </a>
+        <div class="<%= brandguide.layout %>nav-logo">
+            <a href="/view/<%= brandguide._id %>"><img src="/uploads/image/<%= brandguide.firstimage %>"
+                    alt="Davinci text" style="width:200px;height:200;"></a>
+        </div>
+        <div class="<%= brandguide.layout %>nav-items">
+            <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">Intro</a>
+            <a href="/logo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.logoHeader %>
+            </a>
+            <a href="/font/<%= brandguide._id %>" class="<%= brandguide.layout %>active"><span>
+                    <%= brandguide.fontHeader %>
+                </span>
 
+            </a>
+            <a href="/color/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.colorsHeader %>
+            </a>
+            <a href="/media/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">
+                <%= brandguide.mediaHeader %>
+            </a>
+        </div>
         <!--OPTIONALS
         <a href="/optionalone/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.colorsHeader %> </a>
         <a href="/optionaltwo/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item"><%= brandguide.mediaHeader %> </a> 
@@ -59,23 +102,28 @@
         <div class="<%= brandguide.layout %>nav-end">
         </div>
     </div>
-    
+
 
     <div class="<%= brandguide.layout %>main">
-    <div class="<%= brandguide.layout %>flexbox-container" id="intro">
-        <div class="row">
-            <div>
+        <div class="<%= brandguide.layout %>flexbox-container" id="intro">
+            <div class="row">
                 <div>
                     <div>
-                        <h3 class="text-dark"><%= brandguide.fontHeader %></h3>
+                        <div>
+                            <h3 class="text-dark">
+                                <%= brandguide.fontHeader %>
+                            </h3>
+                        </div>
+                        <div class=""><img src="/uploads/fontimage/<%= brandguide.fontimage %>" width="300px"
+                                height="300px" /></div>
+                        <div class="">
+                            <%= brandguide.fontDescription %>
+                        </div>
                     </div>
-                    <div class=""><img src="/uploads/fontimage/<%= brandguide.fontimage %>" width="300px" height="300px"/></div>
-                    <div class=""><%= brandguide.fontDescription %></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
     <script>
@@ -87,4 +135,5 @@
 
     </script>
 </body>
+
 </html>
