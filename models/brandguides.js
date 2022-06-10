@@ -14,6 +14,10 @@ const brandguideSchema = new mongoose.Schema({
     creator: {
         type: String
     },
+    fontcolor: {
+        type: String,
+        required: true,
+    },
     bgcolor: {
         type: String,
         required: true,
