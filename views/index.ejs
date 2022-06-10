@@ -24,9 +24,9 @@
         </div>
         <a th:inline="text">username</a>
         <div class="topnav-centered">
-            <a class="nav-link" href="/add" style="margin-left: 300px;">New</a>
-            <a class="nav-link" href="/" style="margin-left: 100px;">Open</a>
-            <a class="nav-link" href="/share" style="margin-left: 100px;">Share</a>
+            <a class="nav-link" href="/add" style="margin-left: 300px;">New brandguide</a>
+            <a class="nav-link" href="/" style="margin-left: 100px;">Brandguides</a>
+            <a class="nav-link" href="/share" style="margin-left: 100px;">Share brandguide</a>
         </div>
 
 
@@ -50,18 +50,18 @@
                         <% brandguides.forEach((row, index)=> { %>
                             <div class="flex-item">
                                 <div><a href="/view/<%= row._id %> "><img src="uploads/image/<%= row.firstimage %> "
-                                            width="250px" height="300px"
+                                            width="300px" height="300px"
                                             style="border: 2px solid #505050; border-radius: 20px;"> </a>
                                 </div>
-                                <div style="padding-top: 10px; font-size:23px;">
+                                <div class="flex-name">
                                     <%= row.name %>
                                 </div>
 
-                                <div style="padding-top: 2yyy0px;">
+                                <div style="padding-top: 10px;">
                                     <a href="/edit/<%= row._id %> " class="text-success"><img src="../images/edit.png"
-                                            width="30px" height="30px"></a>
+                                            width="30px" height="30px" style="padding: 10px;"></a>
                                     <button onclick="document.getElementById('<%= row._id %>').style.display='block'"><img
-                                            src="../images/delete.png" width="30px" height="30px"></button>
+                                            src="../images/delete.png" width="30px" height="30px" style="padding: 10px;"></button>
 
                                     <div id="<%= row._id %>" class="modal">
 
