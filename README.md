@@ -3,6 +3,8 @@
 
 Install MongoDB and MongoDB Compass to your computer.
 
+Node version 14.10 or up
+
 
 For Windows: 
 Download and install MongoDB Community Server: https://www.mongodb.com/try/download/community
