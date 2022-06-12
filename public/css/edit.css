@@ -172,6 +172,15 @@ input[type=radio] {
   accent-color: rgb(0, 174, 255);
 }
 
+input[type=file] {
+  margin-top: 20px;
+  color: black;
+  height: 25px;
+  border-radius: 20px;
+  width: 240px;
+  padding: 15px;
+}
+
 .layout img {
   vertical-align: middle;
 }
@@ -365,3 +374,4 @@ input[type=radio] {
     width: 100%;
   }
 }
+

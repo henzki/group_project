@@ -315,3 +315,17 @@ hr {
     padding: 125px;
     border-radius: 35px;
 }
+
+.buttons {
+    float: left;
+}
+
+.buttons-row {
+    margin-top: 10px;
+}
+
+.buttons-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

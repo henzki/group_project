@@ -55,10 +55,11 @@
                                     <%= row.name %>
                                 </div>
 
-                                <div style="padding-top: 10px;">
-                                    <button href="/edit/<%= row._id %> " class="buttons"><img src="../images/edit.png"
-                                            width="30px" height="30px" style="padding: 5px;"></button>
-                                    <button class="buttons" onclick="document.getElementById('<%= row._id %>')"><img
+                                <div class="buttons-row">
+                                    <form action="/edit/<%= row._id %>">
+                                    <button class="buttons" style="margin-left: 125px;"><img src="../images/edit.png"
+                                            width="30px" height="30px" style="padding: 5px;"></button></form>
+                                    <button class="buttons" onclick="document.getElementById('<%= row._id %>')" style="margin-left: 10px;"><img
                                             src="../images/delete.png" width="30px" height="30px"
                                             style="padding: 5px;"></button>
 
