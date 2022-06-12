@@ -12,6 +12,58 @@ body {
     padding: 25px;
 }
 
+.buttons {
+    border-radius: 50px;
+}
+
+/*-------------------------------DARK MODE------------------------------------------*/
+
+.dark-mode {
+    background-color: black;
+    color: #cecece;
+}
+
+.dark-mode .topnav a {
+    color: #cecece;
+}
+
+.dark-mode .topnav {
+    border-bottom: 2px solid #cecece;
+}
+
+.dark-mode .border-left {
+    border-left: 2px solid #cecece;
+}
+
+.dark-mode .buttons {
+    background-color: #cecece;
+}
+
+.dark-mode .flex-image {
+    border: 2px solid #cecece;
+}
+
+.dark-mode .add-button {
+    background-color: #cecece;
+}
+
+.dark-mode .column-3 a {
+    color: black;
+    background-color: #cecece;
+}
+
+.dark-mode .column-3 input[type=text] {
+    background-color: #cecece;
+    color: #0078a0;
+}
+
+.dark-mode .column-3 img {
+    background-color: #cecece;
+}
+
+
+/*-------------------------------DARK MODE------------------------------------------*/
+
 /*-------------------------------NAVIGATION------------------------------------------*/
 
 .topnav {
@@ -39,6 +91,11 @@ body {
 
 .topnav .icon {
     display: none;
+}
+
+.border-left {
+    padding-left: 50px;
+    border-left: 2px solid #505050;
 }
 
 /*-------------------------------NAVIGATION END------------------------------------------*/
@@ -87,6 +144,11 @@ body {
     display: table;
     clear: both;
 
+}
+
+.flex-image {
+    border: 2px solid #505050;
+    border-radius: 20px;
 }
 
 /*-------------------------------SHARE PAGE------------------------------------------*/
@@ -138,10 +200,10 @@ input[type=submit] {
 
 .link-second {
     padding: 10px;
-    margin-left:0;
+    margin-left: 0;
     border: 1px solid black;
     border-top-right-radius: 15px 15px;
-    border-bottom-right-radius: 15px 15px;  
+    border-bottom-right-radius: 15px 15px;
     border-left: black;
     position: absolute;
 
@@ -157,6 +219,7 @@ input[type=submit] {
     text-decoration: none;
     position: relative;
 }
+
 /*---------------------MESSAGE FOR ADDING, UPDATING AND DELETING--------------------------------*/
 
 .success {
@@ -244,4 +307,11 @@ button {
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
+}
+
+/*Add button*/
+
+.add-button {
+    padding: 125px;
+    border-radius: 35px;
 }

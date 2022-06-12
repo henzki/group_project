@@ -18,8 +18,8 @@
 <body>
     <div class="topnav" id="myTopnav">
         <div class="topnav-right">
-            <a href="/account" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
-            <a href="#" onclick="darker()">Night mode</a>
+            <a href="/account" class="border-left">Account</a>
+            <a onclick="myFunction()" id="modeSwitcher">Night mode</a>
         </div>
         <div class="topnav-centered">
             <a class="nav-link" href="/add" style="margin-left: 400px;">New brandguide</a>
@@ -54,6 +54,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function myFunction() {
+            var element = document.body;
+            var btn = document.getElementById("modeSwitcher");
+            element.classList.toggle("dark-mode");
+            if (element.classList.contains("dark-mode"))
+                btn.innerHTML = "Light mode";
+            else
+                btn.innerHTML = "Night mode";
+        }
+    </script>
 
 </body>
 

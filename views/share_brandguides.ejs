@@ -19,8 +19,8 @@
 
     <div class="topnav" id="myTopnav">
         <div class="topnav-right">
-            <a href="/account" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
-            <a href="#" onclick="darker()">Night mode</a>
+            <a href="/account" class="border-left">Account</a>
+            <a onclick="myFunction()" id="modeSwitcher">Night mode</a>
         </div>
         <div class="topnav-centered">
             <a class="nav-link" href="/add" style="margin-left: 400px;">New brandguide</a>
@@ -53,7 +53,7 @@
                                         <div><a href="/view/<%= row._id %> "><img
                                                     src="uploads/image/<%= row.firstimage %> " width="200px"
                                                     height="200px"
-                                                    style="border: 1px solid #505050; border-radius: 20px;"> </a>
+                                                    class="flex-image"> </a>
                                         </div>
                                         <div style="padding-top: 10px; font-size:23px;">
                                             <%= row.name %>
@@ -63,7 +63,7 @@
                                 <div class="column">
                                     <div class="column-3">
                                         <div style="margin-top: 30px; margin-bottom: 50px;"><img
-                                                src="../images/share.png" width="25px" height="25px">  Share link</a>
+                                                src="../images/share.png" width="25px" height="25px" style="padding: 15px; margin-right: 10px; border-radius: 21px;">  Share link</a>
                                         </div>
 
                                         <input type="text" value="http://localhost:5000/view/<%= row._id %>"
@@ -124,6 +124,16 @@
 
             /* Alert the copied text */
             alert("Copied the text: " + copyText.value);
+        }
+
+        function myFunction() {
+            var element = document.body;
+            var btn = document.getElementById("modeSwitcher");
+            element.classList.toggle("dark-mode");
+            if (element.classList.contains("dark-mode"))
+                btn.innerHTML = "Light mode";
+            else
+                btn.innerHTML = "Night mode";
         }
     </script>
 </body>

@@ -18,8 +18,8 @@
 <body>
     <div class="topnav" id="myTopnav">
         <div class="topnav-right">
-            <a href="/account" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
-            <a href="#" onclick="darker()">Night mode</a>
+            <a href="/account" class="border-left">Account</a>
+            <a onclick="myFunction()" id="modeSwitcher">Night mode</a>
         </div>
         <div class="topnav-centered">
             <a class="nav-link" href="/add" style="margin-left: 400px;">New brandguide</a>
@@ -75,7 +75,8 @@
                                     <h4>Font Color</h4>
                                     <input class="radio" type="radio" name="fontcolor" value="black" checked>
                                     <label style="margin-left: 20px; font-size:23px;">Black</label>
-                                    <input class="radio" type="radio" name="fontcolor" value="white" style="margin-left: 50px;">
+                                    <input class="radio" type="radio" name="fontcolor" value="white"
+                                        style="margin-left: 50px;">
                                     <label style="margin-left: 20px; font-size:23px;">White</label>
                                 </div>
 
@@ -88,25 +89,29 @@
                                     <label for="navbgcolor">Navigation background-color:</label>
                                     <br>
                                     <input type="text" name="navbgcolor" required />
-                                    <p>* Supports CSS color names, HEX, RGB, RGBA, HSL, HSLA, Predifined/cross-browser color names</p>
+                                    <p>* Supports CSS color names, HEX, RGB, RGBA, HSL, HSLA, Predifined/cross-browser
+                                        color names</p>
                                 </div>
 
                                 <div class="layout">
                                     <h4>Layout:</h4>
                                     <input class="radio" type="radio" name="layout" value="side" checked>
-                                    <img src="../images/side-layout.png" width="120px" height="120px" style="margin-left:20px;">
-                                    <input class="radio" type="radio" name="layout" value="top" style="margin-left: 50px;">
-                                    <img src="../images/top-layout.png" width="120px" height="120px" style="margin-left:20px;">
+                                    <img src="../images/side-layout.png" width="120px" height="120px"
+                                        style="margin-left:20px;">
+                                    <input class="radio" type="radio" name="layout" value="top"
+                                        style="margin-left: 50px;">
+                                    <img src="../images/top-layout.png" width="120px" height="120px"
+                                        style="margin-left:20px;">
                                 </div>
 
-                                    <input type="submit" name="submit" value="Add project" />
-                                </div>
-                            </form>
+                                <input type="submit" name="submit" value="Add project" />
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
@@ -150,6 +155,15 @@
             $('.image-upload-wrap').removeClass('image-dropping');
         });
 
+        function myFunction() {
+            var element = document.body;
+            var btn = document.getElementById("modeSwitcher");
+            element.classList.toggle("dark-mode");
+            if (element.classList.contains("dark-mode"))
+                btn.innerHTML = "Light mode";
+            else
+                btn.innerHTML = "Night mode";
+        }
     </script>
 
 </body>
