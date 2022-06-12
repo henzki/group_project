@@ -1,6 +1,11 @@
 //imports
 require('dotenv').config();
 const express = require('express');
+const passport = require("passport");
+const bodyParser = require("body-parser");
+const LocalStrategy = require("passport-local").Strategy;
+const passportLocalMongoose = require("passport-local-mongoose");
+const User = require("./models/users");
 const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require("path");
@@ -30,6 +35,14 @@ app.use(session({
     resave: false,
 })
 );
+
+//passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
     res.locals.message = req.session.message;

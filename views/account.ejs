@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/account.css">
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <title>
+        Account
+    </title>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <div class="topnav-right">
+            <a href="/account" style="padding-left: 50px; border-left: 2px solid #505050;">Account</a>
+            <a href="#" onclick="darker()">Night mode</a>
+        </div>
+        <div class="topnav-centered">
+            <a class="nav-link" href="/add" style="margin-left: 400px;">New brandguide</a>
+            <a class="nav-link" href="/index" style="margin-left: 100px;">Brandguides</a>
+            <a class="nav-link" href="/share" style="margin-left: 100px;">Share brandguide</a>
+        </div>
+
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <img src="../images/user.png" width="300px" height="300px">
+                </div>
+                <div class="column">
+                    <h3>Hi <%= user.username %>
+                    </h3>
+                    <p>Username: <%= user.username %>
+                    </p>
+                    <p>User: Developer</p>
+                </div>
+            </div>
+            <div style="width:100%; text-align: center;">
+                <form action="/logout">
+                    <input type="submit" value="Logout" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

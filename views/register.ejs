@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body>
+
+    <form action="/register" method="post" name="form1">
+        <h3 style="margin-top: 50px; margin-bottom: 50px;">Register user</h3>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <br>
+            <input type="username" name="username" class="form-control" id="username" value="">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+            <br>
+            <input type="password" name="password" class="form-control" id="password" value="">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add">
+        <br>
+        <a href="/login" class="btn btn-success ml-2">Go to login</a>
+    </form>
+</body>
+
+</html>

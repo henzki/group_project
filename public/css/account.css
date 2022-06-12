@@ -1,0 +1,70 @@
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    font-weight: 1000;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.main {
+    max-width: 700px;
+    margin: auto;
+    padding-top: 200px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+input[type=submit] {
+    font-family: 'Manrope', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 800;
+    width: 150px;
+    height: 70px;
+    color: white;
+    background-color: black;
+}
+
+/*--------------NAVIGATION---------------------------*/
+
+.topnav {
+    width: 100%;
+    overflow-x: hidden;
+    border-bottom: 2px solid #505050;
+    position: relative;
+}
+
+.topnav a {
+    float: left;
+    margin: 24px 26px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #505050;
+    display: block;
+    text-align: center;
+}
+
+
+.topnav-right {
+    float: right;
+}
+
+
+.topnav .icon {
+    display: none;
+}
+
+/*--------------NAVIGATION---------------------------*/

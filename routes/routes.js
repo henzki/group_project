@@ -5,6 +5,10 @@ const multer = require('multer');
 const fs = require("fs");
 const { userInfo } = require('os');
 const path = require('path');
+const passport = require('passport');
+const User = require("../models/users");
+
+
 
 //image upload
 const storage = multer.diskStorage({
@@ -143,13 +147,13 @@ router.post('/add', upload.fields([{
                 type: 'success',
                 message: 'Brandguide added succesfully.'
             };
-            res.redirect('/');
+            res.redirect('/index');
         }
     })
 });
 
 //Get all
-router.get("/", (req, res) => {
+router.get("/index", isLoggedIn, (req, res) => {
     Brandguide.find().exec((err, brandguides) => {
         if (err) {
             res.json({ message: err.message });
@@ -167,10 +171,10 @@ router.get('/view/:id', (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/view_brandguides', {
                     title: 'View brandguide',
@@ -187,10 +191,10 @@ router.get('/logo/:id', (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/logo_brandguides', {
                     title: 'View brandguide',
@@ -207,10 +211,10 @@ router.get('/font/:id', (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/font_brandguides', {
                     title: 'View brandguide',
@@ -227,10 +231,10 @@ router.get('/color/:id', (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/color_brandguides', {
                     title: 'View brandguide',
@@ -248,10 +252,10 @@ router.get('/media/:id', (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/media_brandguides', {
                     title: 'View brandguide',
@@ -269,10 +273,10 @@ router.get('/optionalone/:id', (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/optionalone_brandguides', {
                     title: 'View brandguide',
@@ -284,28 +288,9 @@ router.get('/optionalone/:id', (req, res) => {
     });
 });
 
-//Get all Optional Two
-router.get('/optionaltwo/:id', (req, res) => {
-    let id = req.params.id;
-    Brandguide.findById(id, (err, brandguide) => {
-        if (err) {
-            res.redirect('/');
-        } else {
-            if (brandguide == null) {
-                res.redirect('/');
-            } else {
-                res.render('./views/optionaltwo_brandguides', {
-                    title: 'View brandguide',
-                    brandguide: brandguide,
-
-                });
-            }
-        }
-    });
-});
 
 //Share
-router.get("/share", (req, res) => {
+router.get("/share", isLoggedIn, (req, res) => {
     Brandguide.find().exec((err, brandguides) => {
         if (err) {
             res.json({ message: err.message });
@@ -318,20 +303,38 @@ router.get("/share", (req, res) => {
     })
 });
 
-router.get('/add', (req, res) => {
+router.get('/add', isLoggedIn, (req, res) => {
     res.render('./views/add_brandguides', { title: "Add Brandguides" });
 });
 
+router.get('/account', isLoggedIn, (req, res) => {
+    let id = req.user.id;
+    User.findById(id, (err, user) => {
+        if (err) {
+            res.redirect('/index');
+        } else {
+            if (user == null) {
+                res.redirect('/index');
+            } else {
+                res.render('./views/account', {
+                    title: 'Account information',
+                    user: user,
+
+                });
+            }
+        }
+    });
+});
 
 // Edit route
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', isLoggedIn, (req, res) => {
     let id = req.params.id;
     Brandguide.findById(id, (err, brandguide) => {
         if (err) {
-            res.redirect('/');
+            res.redirect('/index');
         } else {
             if (brandguide == null) {
-                res.redirect('/');
+                res.redirect('/index');
             } else {
                 res.render('./views/edit_brandguides', {
                     title: 'Edit brandguide',
@@ -344,7 +347,7 @@ router.get('/edit/:id', (req, res) => {
 });
 
 // Update route
-router.post('/update/:id', upload.fields([{
+router.post('/update/:id', isLoggedIn, upload.fields([{
     name: 'firstimage', maxCount: 1
 },
 {
@@ -394,10 +397,10 @@ router.post('/update/:id', upload.fields([{
         mediaimage: req.files['mediaimage']?.[0]?.filename ? req.files['mediaimage']?.[0]?.filename : req.body.old_mediaimage,
         optionalOneHeader: req.body.optionalOneHeader ? req.body.optionalOneHeader : ' ',
         optionalOneDescription: req.body.optionalOneDescription ? req.body.optionalOneDescription : '',
-        optionalOneimage: req.files['optionalOneimage']?.[0]?.filename ? req.files['optionalOneimage']?.[0]?.filename : '',
+        optionalOneimage: req.files['optionalOneimage']?.[0]?.filename ? req.files['optionalOneimage']?.[0]?.filename : req.body.old_optionalOneimage,
         optionalTwoHeader: req.body.optionalTwoHeader ? req.body.optionalTwoHeader : ' ',
         optionalTwoDescription: req.body.optionalTwoDescription ? req.body.optionalTwoDescription : '',
-        optionalTwoimage: req.files['optionalTwoimage']?.[0]?.filename ? req.files['optionalTwoimage']?.[0]?.filename : '',
+        optionalTwoimage: req.files['optionalTwoimage']?.[0]?.filename ? req.files['optionalTwoimage']?.[0]?.filename : req.body.old_optionalTwoimage,
 
 
     }, (err, result) => {
@@ -456,13 +459,13 @@ router.post('/update/:id', upload.fields([{
                 type: 'success',
                 message: 'Brandguide updated succesfully.'
             };
-            res.redirect('/');
+            res.redirect('/index');
         }
     });
 });
 
 // Delete route
-router.get('/delete/:id', (req, res) => {
+router.get('/delete/:id', isLoggedIn, (req, res) => {
     let id = req.params.id;
     Brandguide.findByIdAndRemove(id, (err, result) => {
         if (result.firstimage != '') {
@@ -528,9 +531,79 @@ router.get('/delete/:id', (req, res) => {
                 type: 'success',
                 message: 'Brandguide deleted succesfully.'
             };
-            res.redirect('/');
+            res.redirect('/index');
         }
     })
 })
+
+// Showing home page
+router.get("/", function (req, res) {
+    res.render('./views/login', {
+        title: 'Login',
+        username: '',
+        password: ''
+    })
+});
+
+// Showing register form
+router.get("/register", function (req, res) {
+    res.render('./views/register', {
+        title: 'Registration Page',
+        name: '',
+        email: '',
+        password: ''
+    })
+});
+
+// Handling user signup
+router.post("/register", function (req, res) {
+    const email = req.body.email
+    const password = req.body.password
+    User.register(new User({ username: req.body.username }), req.body.password, function (err) {
+        if (err) {
+            console.log('error while user register!', err);
+            return console.log(err);
+        }
+
+        console.log('user registered!');
+
+        res.redirect('/');
+    });
+});
+
+//Showing login form
+router.get("/login", function (req, res) {
+    res.render('./views/login', {
+        title: 'Login',
+        username: '',
+        password: ''
+    })
+});
+//Handling user login
+router.post("/login", passport.authenticate("local", {
+    successRedirect: "/index",
+    failureRedirect: "/login"
+}), function (req, res) {
+});
+
+//Handling user logout
+router.get('/logout', function (req, res, next) {
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+});
+
+router.post('/logout', function (req, res, next) {
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+});
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect("/login");
+}
 
 module.exports = router;
