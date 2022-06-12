@@ -325,6 +325,29 @@ input[type=radio] {
   transition: all .2s ease;
 }
 
+.form-label {
+  padding: 5px 10px;
+  background: #e9e9e9;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 7.5px;
+}
+
+
+.hide_file {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-size: 24px;
+  width: 100%;
+
+}
+
 /*-------------------------------FILE UPLOAD END------------------------------------------*/
 
 .sideactive {
