@@ -88,6 +88,9 @@ body {
     float: right;
 }
 
+.topnav a:hover {
+    color: rgb(122, 122, 122);
+}
 
 .topnav .icon {
     display: none;
