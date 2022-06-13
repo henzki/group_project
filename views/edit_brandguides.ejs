@@ -66,7 +66,19 @@
             border: 1px solid <%=brandguide.fontcolor %>;
         }
 
-        
+        .accordion {
+            background-color: <%=brandguide.bgcolor %>;
+            color: <%=brandguide.fontcolor %>;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: <%=brandguide.bgcolor %>;
+        }
+
+        .panel {
+            background-color: <%=brandguide.bgcolor %>;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -129,13 +141,13 @@
 
                                 <div>
                                     <div>
-                                    <label for="firstimage">Select main logo:</label>
+                                        <label for="firstimage">Select main logo:</label>
                                     </div>
                                     <input class="form-label" type="file" class="hide_file" name="firstimage" />
                                     <br>
                                     <img src="/uploads/image/<%= brandguide.firstimage %> " width="200" style="padding-top: 20px; />
 
-                                        <input type="hidden" name="old_firstimage"
+                                        <input type=" hidden" name="old_firstimage"
                                         value="<%= brandguide.firstimage %> " />
                                 </div>
 
@@ -168,7 +180,7 @@
                                         placeholder="Enter navbgcolor" required />
                                 </div>
                                 <div class="layout">
-                                    
+
                                     <h4>Layout:</h4>
                                     <input class="radio" type="radio" name="layout" value="side">
                                     <img src="../images/side-layout-white.png" width="190px" height="120px"
@@ -178,98 +190,127 @@
                                     <img src="../images/top-layout-white.png" width="190px" height="120px"
                                         style="margin-left:20px; mix-blend-mode: difference;">
                                 </div>
-
-                                <h2>Logos</h2>
-                                
-                                <div>
-                                    <label for="logoHeader">Logo header</label>
-                                    <input type="text" name="logoHeader" value="<%= brandguide.logoHeader %>"
-                                        placeholder="Enter Logo Header" />
+                                <div class="accordion">
+                                    <h2>
+                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <%= brandguide.logoHeader %>
+                                    </h2>
                                 </div>
-                                <div>
-                                    <label for="logoDescription">Logo description</label>
-                                    <input type="text" name="logoDescription" value="<%= brandguide.logoDescription %>"
-                                        placeholder="Enter Logo Description" />
-                                </div>
-                                <div>
-
+                                <div class="panel">
                                     <div>
-                                        <label for="logoimage">Select logo image:</label>
+                                        <label for="logoHeader">
+                                            <%= brandguide.logoHeader %>
+                                        </label>
+                                        <input type="text" name="logoHeader" value="<%= brandguide.logoHeader %>"
+                                            placeholder="Enter Logo Header" />
+                                    </div>
+                                    <div>
+                                        <label for="logoDescription">Logo description</label>
+                                        <input type="text" name="logoDescription"
+                                            value="<%= brandguide.logoDescription %>"
+                                            placeholder="Enter Logo Description" />
+                                    </div>
+                                    <div>
+
+                                        <div>
+                                            <label for="logoimage">Select logo image:</label>
                                         </div>
                                         <input class="form-label" type="file" class="hide_file" name="logoimage" />
                                         <br>
                                         <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="200"
-                                        style="padding-top: 40px;" />
+                                            style="padding-top: 40px;" />
+                                    </div>
+                                    <input type="hidden" name="old_logoimage" value="<%= brandguide.logoimage %> " />
+                                    <p>* Image will be displayed in 1000*600px</p>
                                 </div>
-                                <input type="hidden" name="old_logoimage" value="<%= brandguide.logoimage %> " />
-                                <p>* Image will be displayed in 1000*600px</p>
 
-                                <h2>Fonts</h2>
 
-                                <div>
-                                    <label for="fontHeader">Font header</label>
-                                    <input type="text" name="fontHeader" value="<%= brandguide.fontHeader %>"
-                                        placeholder="Enter Font Header" />
+                                <div class="accordion">
+                                    <h2>
+                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <%= brandguide.fontHeader %>
+                                    </h2>
                                 </div>
-                                <div>
-                                    <label for="fontDescription">Font description</label>
-                                    <input type="text" name="fontDescription" value="<%= brandguide.fontDescription %>"
-                                        placeholder="Enter Font Description" />
-                                </div>
-                                <div>
-                                    <label for="fontimage">Select font image:</label>
-                                        </div>
-                                        <input class="form-label" type="file" class="hide_file" name="fontimage" />
-                                        <br>
+                                <div class="panel">
+                                    <div>
+                                        <label for="fontHeader">Font header</label>
+                                        <input type="text" name="fontHeader" value="<%= brandguide.fontHeader %>"
+                                            placeholder="Enter Font Header" />
+                                    </div>
+                                    <div>
+                                        <label for="fontDescription">Font description</label>
+                                        <input type="text" name="fontDescription"
+                                            value="<%= brandguide.fontDescription %>"
+                                            placeholder="Enter Font Description" />
+                                    </div>
+                                    <div>
+                                        <label for="fontimage">Select font image:</label>
+                                    </div>
+                                    <input class="form-label" type="file" class="hide_file" name="fontimage" />
+                                    <br>
                                     <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="200"
                                         style="padding-top: 40px;" />
 
+
+
+                                    <input type="hidden" name="old_fontimage" value="<%= brandguide.fontimage %> " />
+                                    <p>* Image will be displayed in 1000*600px</p>
+                                </div>
+
+                                <div class="accordion">
+                                    <h2>
+                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <%= brandguide.colorsHeader %>
+                                    </h2>
                                     
-                                </div> 
-                                <input type="hidden" name="old_fontimage" value="<%= brandguide.fontimage %> " />
-                                <p>* Image will be displayed in 1000*600px</p>
-
-                                <h2>Colors</h2>
-
-                                <div>
-                                    <label for="colorsHeader">Colors header</label>
-                                    <input type="text" name="colorsHeader" value="<%= brandguide.colorsHeader %>"
-                                        placeholder="Enter Colors Header" />
                                 </div>
-                                <div>
-                                    <label for="colorsDescription">Colors description</label>
-                                    <input type="text" name="colorsDescription"
-                                        value="<%= brandguide.colorsDescription %>"
-                                        placeholder="Enter Colors Description" />
-                                </div>
-                                <div>
-                                    <label for="colorsimage">Select colors image:</label>
-                                        </div>
-                                        <input class="form-label" type="file" class="hide_file" name="colorsimage" />
+                                <div class="panel">
+                                    <div>
+                                        <label for="colorsHeader">Colors header</label>
+                                        <input type="text" name="colorsHeader" value="<%= brandguide.colorsHeader %>"
+                                            placeholder="Enter Colors Header" />
+                                    </div>
+                                    <div>
+                                        <label for="colorsDescription">Colors description</label>
+                                        <input type="text" name="colorsDescription"
+                                            value="<%= brandguide.colorsDescription %>"
+                                            placeholder="Enter Colors Description" />
+                                    </div>
+                                    <div>
+                                        <label for="colorsimage">Select colors image:</label>
+                                    </div>
+                                    <input class="form-label" type="file" class="hide_file" name="colorsimage" />
                                     <br>
                                     <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="200"
                                         style="padding-top: 40px;" />
-                                </div>
-                                <input type="hidden" name="old_colorsimage" value="<%= brandguide.colorsimage %> " />
-                                <p>* Image will be displayed in 1000*600px</p>
 
-                                <h2>Media</h2>
+                                    <input type="hidden" name="old_colorsimage"
+                                        value="<%= brandguide.colorsimage %> " />
+                                    <p>* Image will be displayed in 1000*600px</p>
+                                </div>
 
-                                <div>
-                                    <label for="mediaHeader">Media header</label>
-                                    <input type="text" name="mediaHeader" value="<%= brandguide.mediaHeader %>"
-                                        placeholder="Enter Media Header" />
+                                <div class="accordion">
+                                    <h2>
+                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <%= brandguide.mediaHeader %>
+                                    </h2>
                                 </div>
-                                <div>
-                                    <label for="mediaDescription">Media description</label>
-                                    <input type="text" name="mediaDescription"
-                                        value="<%= brandguide.mediaDescription %>"
-                                        placeholder="Enter Media Description" />
-                                </div>
-                                <div>
-                                    <label for="mediaimage">Select media image:</label>
-                                        </div>
-                                        <input class="form-label" type="file" class="hide_file" name="mediaimage" />
+                                <div class="panel">
+                                    <div>
+                                        <label for="mediaHeader">Media header</label>
+                                        <input type="text" name="mediaHeader" value="<%= brandguide.mediaHeader %>"
+                                            placeholder="Enter Media Header" />
+                                    </div>
+                                    <div>
+                                        <label for="mediaDescription">Media description</label>
+                                        <input type="text" name="mediaDescription"
+                                            value="<%= brandguide.mediaDescription %>"
+                                            placeholder="Enter Media Description" />
+                                    </div>
+                                    <div>
+                                        <label for="mediaimage">Select media image:</label>
+                                    </div>
+                                    <input class="form-label" type="file" class="hide_file" name="mediaimage" />
                                     <br>
                                     <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="200"
                                         style="padding-top: 40px;" />
@@ -277,33 +318,36 @@
                                 </div>
 
 
-                                <h2>Optionals</h2>
-
-
-                                <div>
-                                    <label for="optionalOneHeader">First optional header</label>
-                                    <input type="text" name="optionalOneHeader"
-                                        value="<%= brandguide.optionalOneHeader %>"
-                                        placeholder="Enter optionalOneHeader" />
+                                <div class="accordion">
+                                    <h2>
+                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        Optionals
+                                    </h2>
                                 </div>
-                                <div>
-                                    <label for="optionalOneDescription">First optional description</label>
-                                    <input type="text" name="optionalOneDescription"
-                                        value="<%= brandguide.optionalOneDescription %>"
-                                        placeholder="Enter optionalOneDescription" />
-                                </div>
-                                <div>
-                                    <label for="optionalOneimage">Select first optional image:</label>
-                                        </div>
-                                        <input class="form-label" type="file" class="hide_file" name="optionalOneimage" />
+                                <div class="panel">
+                                    <div>
+                                        <label for="optionalOneHeader">First optional header</label>
+                                        <input type="text" name="optionalOneHeader"
+                                            value="<%= brandguide.optionalOneHeader %>"
+                                            placeholder="Enter optionalOneHeader" />
+                                    </div>
+                                    <div>
+                                        <label for="optionalOneDescription">First optional description</label>
+                                        <input type="text" name="optionalOneDescription"
+                                            value="<%= brandguide.optionalOneDescription %>"
+                                            placeholder="Enter optionalOneDescription" />
+                                    </div>
+                                    <div>
+                                        <label for="optionalOneimage">Select first optional image:</label>
+                                    </div>
+                                    <input class="form-label" type="file" class="hide_file" name="optionalOneimage" />
                                     <br>
                                     <img src="/uploads/optionalOneimage/<%= brandguide.optionalOneimage %> " width="200"
                                         style="padding-top: 40px;" />
-                                </div>
-                                <input type="hidden" name="old_optionalOneimage"
-                                    value="<%= brandguide.optionalOneimage %> " />
-                                <p>* Image will be displayed in 1000*600px</p>
-                                <div>
+
+                                    <input type="hidden" name="old_optionalOneimage"
+                                        value="<%= brandguide.optionalOneimage %> " />
+                                    <p>* Image will be displayed in 1000*600px</p>
 
                                     <div>
                                         <label for="optionalTwoHeader">Second optional header</label>
@@ -319,27 +363,41 @@
                                     </div>
                                     <div>
                                         <label for="optionalTwoimage">Select second optional image:</label>
-                                        </div>
-                                        <input class="form-label" type="file" class="hide_file" name="optionalTwoimage" />
-                                        <br>
-                                        <img src="/uploads/optionalTwoimage/<%= brandguide.optionalTwoimage %> "
-                                            width="200" style="padding-top: 40px;" />
                                     </div>
+                                    <input class="form-label" type="file" class="hide_file" name="optionalTwoimage" />
+                                    <br>
+                                    <img src="/uploads/optionalTwoimage/<%= brandguide.optionalTwoimage %> " width="200"
+                                        style="padding-top: 40px;" />
+
                                     <input type="hidden" name="old_optionalTwoimage"
                                         value="<%= brandguide.optionalTwoimage %> " />
                                     <p>* Image will be displayed in 1000*600px</p>
-                                    <div>
-
-                                        <input type="submit" name="submit" value="Update brandguide" />
-                                    </div>
-                            </form>
+                                </div>
+                                <input type="submit" name="submit" value="Update brandguide" />
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
 
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -75,7 +75,7 @@ p {
 .sidemain {
   margin-left: 300px;
   /* Same as the width of the sidenav */
-  max-width: 800px;
+  max-width: 900px;
   font-size: 22px;
   padding-left: 50px;
 }
@@ -130,7 +130,7 @@ p {
 }
 
 .topmain {
-  max-width: 800px;
+  max-width: 900px;
   font-size: 22px;
   padding-left: 50px;
 }
@@ -335,6 +335,10 @@ input[type=file] {
   transition: all .2s ease;
 }
 
+.form {
+  width: 100%;
+}
+
 .form-label {
   padding: 5px 10px;
   background: #e9e9e9;
@@ -374,4 +378,19 @@ input[type=file] {
     margin-left: 0%;
     width: 100%;
   }
+}
+
+.accordion {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
 }
