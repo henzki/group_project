@@ -113,4 +113,8 @@ input[type=submit] {
     padding-left: 50px;
     border-left: 2px solid #505050;
 }
+
+.mode-switcher {
+    cursor: pointer;
+}
 /*--------------NAVIGATION---------------------------*/

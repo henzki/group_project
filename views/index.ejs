@@ -20,7 +20,7 @@
     <div class="topnav" id="myTopnav">
         <div class="topnav-right">
             <a href="/account" class="border-left">Account</a>
-            <a onclick="myFunction()" id="modeSwitcher">Night mode</a>
+            <a onclick="myFunction()" id="modeSwitcher" class="mode-switcher">Night mode</a>
         </div>
         <div class="topnav-centered">
             <a class="nav-link" href="/add" style="margin-left: 400px;">New brandguide</a>
@@ -48,7 +48,7 @@
 
                         <% brandguides.forEach((row, index)=> { %>
                             <div class="flex-item">
-                                <div><a href="/view/<%= row._id %> "><img src="uploads/image/<%= row.firstimage %> "
+                                <div><a href="/edit/<%= row._id %> "><img src="uploads/image/<%= row.firstimage %> "
                                             width="300px" height="300px" class="flex-image"> </a>
                                 </div>
                                 <div class="flex-name">
@@ -57,11 +57,19 @@
 
                                 <div class="buttons-row">
                                     <form action="/edit/<%= row._id %>">
-                                    <button class="buttons" style="margin-left: 125px;"><img src="../images/edit.png"
-                                            width="30px" height="30px" style="padding: 5px;"></button></form>
-                                    <button class="buttons" onclick="document.getElementById('<%= row._id %>')" style="margin-left: 10px;"><img
-                                            src="../images/delete.png" width="30px" height="30px"
-                                            style="padding: 5px;"></button>
+                                        <button class="buttons" style="margin-left: 100px;"><img
+                                                src="../images/edit.png" width="30px" height="30px"
+                                                style="padding: 5px;"></button>
+                                    </form>
+                                    <form action="/view/<%= row._id %> ">
+                                        <button class="buttons" style="margin-left: 10px;"><img
+                                                src="../images/view.png" width="30px" height="30px"
+                                                style="padding: 5px;"></button>
+                                    </form>
+                                    <button class="buttons"
+                                        onclick="document.getElementById('<%= row._id %>').style.display='block'"
+                                        style="margin-left: 10px;"><img src="../images/delete.png" width="30px"
+                                            height="30px" style="padding: 5px;"></button>
 
                                     <div id="<%= row._id %>" class="modal">
 
@@ -69,8 +77,8 @@
                                             <div class="container">
                                                 <h3>Delete Project</h3>
                                                 <p>Are you sure you want to delete "<%= row.name %>" project?</p>
-                                                <img src="uploads/image/<%= row.firstimage %>" width="150px"
-                                                    height="150px" style="border-radius:35px;">
+                                                <img src="uploads/image/<%= row.firstimage %>"
+                                                    class="modal-image">
                                                 <div class="clearfix">
                                                     <a href="/delete/<%= row._id %> " class="text-danger"><button
                                                             type="button"

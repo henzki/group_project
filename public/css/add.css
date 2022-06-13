@@ -28,7 +28,7 @@ p {
 }
 
 .dark-mode .topnav {
-    border-bottom: 2px solid #cecece; 
+    border-bottom: 2px solid #cecece;
 }
 
 .dark-mode .border-left {
@@ -36,22 +36,22 @@ p {
 }
 
 .dark-mode .buttons {
-  background-color: #cecece;
+    background-color: #cecece;
 }
 
 .dark-mode .flex-image {
-    border: 2px solid #cecece; 
+    border: 2px solid #cecece;
 }
 
 .dark-mode img {
     padding: 10px;
-    background-color: #cecece; 
-    border: 2px solid #cecece; 
+    background-color: #cecece;
+    border: 2px solid #cecece;
 }
 
 .dark-mode input[type=submit] {
     color: black;
-    background-color: #cecece; 
+    background-color: #cecece;
 }
 
 /*-------------------------------DARK MODE------------------------------------------*/
@@ -88,6 +88,10 @@ p {
 .border-left {
     padding-left: 50px;
     border-left: 2px solid #505050;
+}
+
+.mode-switcher {
+    cursor: pointer;
 }
 
 /*-------------------------------NAVIGATION END------------------------------------------*/

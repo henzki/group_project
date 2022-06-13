@@ -98,6 +98,10 @@ body {
     border-left: 2px solid #505050;
 }
 
+.mode-switcher {
+    cursor: pointer;
+}
+
 /*-------------------------------NAVIGATION END------------------------------------------*/
 
 
@@ -120,7 +124,6 @@ body {
 .flex-container>flex-item {
     color: white;
     width: 100px;
-    margin: 10px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
@@ -132,7 +135,7 @@ body {
 }
 
 .flex-item {
-    padding: 30px;
+    padding: 29px;
     margin-bottom: 10px;
     width: 370px;
     height: 400px;
@@ -223,6 +226,7 @@ input[type=submit] {
 /*---------------------MESSAGE FOR ADDING, UPDATING AND DELETING--------------------------------*/
 
 .success {
+    padding-bottom: 20px;
     height: 30px;
     width: 100%;
     text-align: center;
@@ -249,7 +253,7 @@ button {
 
 /* Add a color to the cancel button */
 .cancelbtn {
-    margin-left: 50px;
+    margin-left: 53px;
     background-color: #ccc;
     color: rgb(0, 0, 0);
     border-radius: 35px;
@@ -276,7 +280,7 @@ button {
     z-index: 1;
     /* Sit on top */
     left: 40%;
-    top: 40%;
+    top: 30%;
     width: 20%;
     /* Full width */
     height: 100%;
@@ -288,7 +292,13 @@ button {
 }
 
 .modal .container {
-    height: 400px;
+    height: 450px;
+}
+
+.modal img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 35px;
 }
 
 /* Modal Content/Box */

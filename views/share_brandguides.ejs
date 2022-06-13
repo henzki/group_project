@@ -20,7 +20,7 @@
     <div class="topnav" id="myTopnav">
         <div class="topnav-right">
             <a href="/account" class="border-left">Account</a>
-            <a onclick="myFunction()" id="modeSwitcher">Night mode</a>
+            <a onclick="myFunction()" id="modeSwitcher" class="mode-switcher">Night mode</a>
         </div>
         <div class="topnav-centered">
             <a class="nav-link" href="/add" style="margin-left: 400px;">New brandguide</a>
@@ -68,7 +68,7 @@
 
                                         <input type="text" value="http://localhost:5000/view/<%= row._id %>"
                                             id="myInput" class="link-first">
-                                        <a onclick="myFunction()" class="link-second"><img src="../images/link.png" width="15px"
+                                        <a onclick="myFunctionFirst()" class="link-second"><img src="../images/link.png" width="15px"
                                                 height="15px"> 
                                             copy</a>
                                         <p>(Note: to gain access to shared link authorization is required)</p>
@@ -111,7 +111,7 @@
                 modal.style.display = "none";
             }
         }
-        function myFunction() {
+        function myFunctionFirst() {
             /* Get the text field */
             var copyText = document.getElementById("myInput");
 
