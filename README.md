@@ -3,7 +3,7 @@
 
 Install MongoDB and MongoDB Compass to your computer.
 
-Node version 14.10 or up
+Node version needs to be 14.10 or up
 
 
 For Windows: 
@@ -17,11 +17,12 @@ Instructions how to install MongoDB on you Mac: https://treehouse.github.io/inst
 
 Download and install MongoDB Compass: https://www.mongodb.com/products/compass
 
+Create a database with the name node_crud and collection brandguides. Then add a new collection called users.
 
-
-Import the following file from project in your MongoDB Compass:
+Import the following files from this repository in your MongoDB Compass:
 
 - brandguides.json
+- users.json
 
 Run npm install in your terminal
 
