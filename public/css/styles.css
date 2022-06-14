@@ -178,16 +178,27 @@ input[type=submit] {
   padding-bottom: 30px;
 }
 
-.image-content img{
+.image-content img {
   width: 1000px;
   height: 600px;
 }
 
 .text-content {
   padding-top: 20px;
+  padding-bottom: 50px;
   font-size: 25px;
   width: 800px;
   text-align: left;
+}
+
+.image-content-media img {
+  width: 800px;
+  height: 400px;
+}
+
+.download {
+  padding: 20px;
+  text-decoration: none;
 }
 
 /*-------------------------------CONTENT END------------------------------------------*/

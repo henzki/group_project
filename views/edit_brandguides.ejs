@@ -103,19 +103,19 @@
         </div>
         <div class="<%= brandguide.layout %>nav-items">
             <a href="#" class="<%= brandguide.layout %>active"><span>Intro</span></a>
-            <a href="#" class="<%= brandguide.layout %>nav-item">
+            <a href="#logo" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.logoHeader %>
             </a>
-            <a href="#" class="<%= brandguide.layout %>nav-item">
+            <a href="#font" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.fontHeader %>
             </a>
-            <a href="#" class="<%= brandguide.layout %>nav-item">
+            <a href="#colors" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.colorsHeader %>
             </a>
-            <a href="#" class="<%= brandguide.layout %>nav-item">
+            <a href="#media" class="<%= brandguide.layout %>nav-item">
                 <%= brandguide.mediaHeader %>
             </a>
-            <a href="#" class="<%= brandguide.layout %>nav-item">More</a>
+            <a href="#more" class="<%= brandguide.layout %>nav-item">More</a>
         </div>
 
         <div class="<%= brandguide.layout %>nav-end">
@@ -158,6 +158,7 @@
                                 </div>
                                 <div>
                                     <label for="creator">Creator</label>
+                                    <br>
                                     <input type="text" name="creator" value="<%= brandguide.creator %>"
                                         placeholder="Enter creator" required />
                                 </div>
@@ -179,6 +180,8 @@
                                     <input type="text" name="navbgcolor" value="<%= brandguide.navbgcolor %>"
                                         placeholder="Enter navbgcolor" required />
                                 </div>
+                                <p>* Supports CSS color names, HEX, RGB, RGBA, HSL, HSLA, Predifined/cross-browser
+                                    color names</p>
                                 <div class="layout">
 
                                     <h4>Layout:</h4>
@@ -190,7 +193,7 @@
                                     <img src="../images/top-layout-white.png" width="190px" height="120px"
                                         style="margin-left:20px; mix-blend-mode: difference;">
                                 </div>
-                                <div class="accordion">
+                                <div class="accordion" id="logo">
                                     <h2>
                                         <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
                                         <%= brandguide.logoHeader %>
@@ -201,6 +204,7 @@
                                         <label for="logoHeader">
                                             <%= brandguide.logoHeader %>
                                         </label>
+                                        <br>
                                         <input type="text" name="logoHeader" value="<%= brandguide.logoHeader %>"
                                             placeholder="Enter Logo Header" />
                                     </div>
@@ -225,7 +229,7 @@
                                 </div>
 
 
-                                <div class="accordion">
+                                <div class="accordion" id="font">
                                     <h2>
                                         <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
                                         <%= brandguide.fontHeader %>
@@ -257,7 +261,7 @@
                                     <p>* Image will be displayed in 1000*600px</p>
                                 </div>
 
-                                <div class="accordion">
+                                <div class="accordion" id="colors">
                                     <h2>
                                         <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
                                         <%= brandguide.colorsHeader %>
@@ -289,7 +293,7 @@
                                     <p>* Image will be displayed in 1000*600px</p>
                                 </div>
 
-                                <div class="accordion">
+                                <div class="accordion" id="media">
                                     <h2>
                                         <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
                                         <%= brandguide.mediaHeader %>
@@ -318,7 +322,7 @@
                                 </div>
 
 
-                                <div class="accordion">
+                                <div class="accordion" id="more">
                                     <h2>
                                         <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
                                         Optionals

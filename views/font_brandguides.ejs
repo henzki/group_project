@@ -110,7 +110,7 @@
                             </h3>
                         </div>
                         <div class="image-content"><img src="/uploads/fontimage/<%= brandguide.fontimage %>"
-                                width="300px" height="300px" /></div>
+                                width="300px" height="300px" onerror='hide(event)' /></div>
                         <div class="text-content">
                             <%= brandguide.fontDescription %>
                         </div>
@@ -120,5 +120,12 @@
         </div>
     </div>
 </body>
+<script>
+    function hide(event) {
+
+        event.target.style.display = 'none'
+
+    }
+</script>
 
 </html>

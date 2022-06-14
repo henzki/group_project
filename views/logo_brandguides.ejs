@@ -108,7 +108,8 @@
                                 <%= brandguide.logoHeader %>
                             </h3>
                         </div>
-                        <div class="image-content"><img src="/uploads/logoimage/<%= brandguide.logoimage %>" /></div>
+                        <div class="image-content"><img src="/uploads/logoimage/<%= brandguide.logoimage %>"
+                                onerror='hide(event)' /></div>
                         <div class="text-content">
                             <%= brandguide.logoDescription %>
                         </div>
@@ -118,5 +119,12 @@
         </div>
     </div>
 </body>
+<script>
+    function hide(event) {
+
+        event.target.style.display = 'none'
+
+    }
+</script>
 
 </html>

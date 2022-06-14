@@ -53,6 +53,12 @@
         .sidemain {
             background-color: <%=brandguide.bgcolor %>;
         }
+
+        .download {
+            background-color: <%=brandguide.bgcolor %>;
+            color: <%=brandguide.fontcolor %>;
+            border: 1px solid <%=brandguide.fontcolor %>;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -107,15 +113,24 @@
                                 <%= brandguide.mediaHeader %>
                             </h3>
                         </div>
-                        <div class="image-content"><img src="/uploads/mediaimage/<%= brandguide.mediaimage %>" /></div>
+                        <div class="image-content-media"><img src="/uploads/mediaimage/<%= brandguide.mediaimage %>" onerror = 'hide(event)'/>
+                        </div>
                         <div class="text-content">
                             <%= brandguide.mediaDescription %>
                         </div>
+                        <a href="/uploads/mediaimage/<%= brandguide.mediaimage %>"
+                            download="<%= brandguide.mediaimage %>" class="download">Download</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+<script>
+    function hide(event){
+        
+      event.target.style.display = 'none'
+      
+    }
+    </script>
 </html>
