@@ -52,8 +52,7 @@
                                     <div class="column-2">
                                         <div><a href="/view/<%= row._id %> "><img
                                                     src="uploads/image/<%= row.firstimage %> " width="200px"
-                                                    height="200px"
-                                                    class="flex-image"> </a>
+                                                    height="200px" class="flex-image"> </a>
                                         </div>
                                         <div style="padding-top: 10px; font-size:23px;">
                                             <%= row.name %>
@@ -63,13 +62,15 @@
                                 <div class="column">
                                     <div class="column-3">
                                         <div style="margin-top: 30px; margin-bottom: 50px;"><img
-                                                src="../images/share.png" width="25px" height="25px" style="padding: 15px; margin-right: 10px; border-radius: 21px;">  Share link</a>
+                                                src="../images/share.png" width="25px" height="25px"
+                                                style="padding: 15px; margin-right: 10px; border-radius: 21px;"> Share
+                                            link</a>
                                         </div>
 
                                         <input type="text" value="http://localhost:5000/view/<%= row._id %>"
                                             id="myInput" class="link-first">
-                                        <a onclick="myFunctionFirst()" class="link-second"><img src="../images/link.png" width="15px"
-                                                height="15px"> 
+                                        <a onclick="myFunctionFirst()" class="link-second"><img src="../images/link.png"
+                                                width="15px" height="15px">
                                             copy</a>
                                         <p>(Note: to gain access to shared link authorization is not required)</p>
                                     </div>
@@ -86,13 +87,7 @@
     </div>
     </div>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("table").DataTable({
-                order: [0, 'desc']
-            });
-        });
 
         function myFunction() {
             var x = document.getElementById("myTopnav");

@@ -159,7 +159,7 @@ router.get("/index", isLoggedIn, (req, res) => {
             res.json({ message: err.message });
         } else {
             res.render('./views/index', {
-                title: 'Brandguide system system',
+                title: 'Brand guides',
                 brandguides: brandguides
             })
         }
@@ -197,7 +197,7 @@ router.get('/logo/:id', (req, res) => {
                 res.redirect('/index');
             } else {
                 res.render('./views/logo_brandguides', {
-                    title: 'View brandguide',
+                    title: 'Logos',
                     brandguide: brandguide,
 
                 });
@@ -217,7 +217,7 @@ router.get('/font/:id', (req, res) => {
                 res.redirect('/index');
             } else {
                 res.render('./views/font_brandguides', {
-                    title: 'View brandguide',
+                    title: 'Fonts',
                     brandguide: brandguide,
 
                 });
@@ -237,7 +237,7 @@ router.get('/color/:id', (req, res) => {
                 res.redirect('/index');
             } else {
                 res.render('./views/color_brandguides', {
-                    title: 'View brandguide',
+                    title: 'Colors',
                     brandguide: brandguide,
 
                 });
@@ -258,7 +258,7 @@ router.get('/media/:id', (req, res) => {
                 res.redirect('/index');
             } else {
                 res.render('./views/media_brandguides', {
-                    title: 'View brandguide',
+                    title: 'Media',
                     brandguide: brandguide,
 
                 });
@@ -279,7 +279,7 @@ router.get('/optionalone/:id', (req, res) => {
                 res.redirect('/index');
             } else {
                 res.render('./views/optionalone_brandguides', {
-                    title: 'View brandguide',
+                    title: 'More',
                     brandguide: brandguide,
 
                 });
@@ -296,7 +296,7 @@ router.get("/share", isLoggedIn, (req, res) => {
             res.json({ message: err.message });
         } else {
             res.render('./views/share_brandguides', {
-                title: 'Brandguide system system',
+                title: 'Share brand guide',
                 brandguides: brandguides
             })
         }
@@ -304,7 +304,7 @@ router.get("/share", isLoggedIn, (req, res) => {
 });
 
 router.get('/add', isLoggedIn, (req, res) => {
-    res.render('./views/add_brandguides', { title: "Add Brandguides" });
+    res.render('./views/add_brandguides', { title: "Add new brand guide" });
 });
 
 router.get('/account', isLoggedIn, (req, res) => {
@@ -337,7 +337,7 @@ router.get('/edit/:id', isLoggedIn, (req, res) => {
                 res.redirect('/index');
             } else {
                 res.render('./views/edit_brandguides', {
-                    title: 'Edit brandguide',
+                    title: 'Edit ',
                     brandguide: brandguide,
 
                 });
