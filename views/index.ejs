@@ -23,16 +23,12 @@
             <a onclick="myFunction()" id="modeSwitcher" class="mode-switcher">Night mode</a>
         </div>
         <div class="topnav-centered">
-            <a class="nav-link" href="/index" style="margin-left: 400px;" class="active">Brand guides</a>
-            <a class="nav-link" href="/add" style="margin-left: 100px;">New brand guide</a>
-            <a class="nav-link" href="/share" style="margin-left: 100px;">Share brand guide</a>
+            <a href="/index" style="margin-left: 400px;" >Brand guides</a>
+            <a href="/add" style="margin-left: 100px;">New brand guide</a>
+            <a href="/share" style="margin-left: 100px;">Share brand guide</a>
         </div>
-
-
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
+
     <div class=main>
         <div class="flex-container">
 
@@ -59,17 +55,17 @@
                                     <form action="/edit/<%= row._id %>">
                                         <button class="buttons" style="margin-left: 100px;"><img
                                                 src="../images/edit.png" width="30px" height="30px"
-                                                style="padding: 5px;"></button>
+                                                class="crud-buttons"></button>
                                     </form>
                                     <form action="/view/<%= row._id %> " target="_blank">
                                         <button class="buttons" style="margin-left: 10px;"><img
                                                 src="../images/view.png" width="30px" height="30px"
-                                                style="padding: 5px;"></button>
+                                                class="crud-buttons"></button>
                                     </form>
                                     <button class="buttons"
                                         onclick="document.getElementById('<%= row._id %>').style.display='block'"
                                         style="margin-left: 10px;"><img src="../images/delete.png" width="30px"
-                                            height="30px" style="padding: 5px;"></button>
+                                            height="30px" class="crud-buttons"></button>
 
                                     <div id="<%= row._id %>" class="modal">
 

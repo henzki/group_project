@@ -64,7 +64,8 @@
     <script src="https://kit.fontawesome.com/704ff50790.js" crossorigin="anonymous">
     </script>
     <title>
-        <%= brandguide.name %> <%= title %>
+        <%= brandguide.name %>
+            <%= title %>
     </title>
 
 </head>
@@ -73,7 +74,7 @@
     <div class="<%= brandguide.layout %>nav">
         <div class="<%= brandguide.layout %>nav-logo">
             <a href="/view/<%= brandguide._id %>"><img src="/uploads/image/<%= brandguide.firstimage %>"
-                    alt="Davinci text" style="width:200px;height:200;"></a>
+                    alt="Main logo of <%= brandguide.name %> "></a>
         </div>
         <div class="<%= brandguide.layout %>nav-items">
             <a href="/view/<%= brandguide._id %>" class="<%= brandguide.layout %>nav-item">Intro</a>
@@ -106,8 +107,8 @@
                                 <%= brandguide.colorsHeader %>
                             </h3>
                         </div>
-                        <div class="image-content"><img src="/uploads/colorsimage/<%= brandguide.colorsimage %>" width="300px"
-                                height="300px" onerror = 'hide(event)'/></div>
+                        <div class="image-content"><img src="/uploads/colorsimage/<%= brandguide.colorsimage %>"
+                                width="300px" height="300px" alt="Color image of <%= brandguide.name %> " onerror='hide(event)' /></div>
                         <div class="text-content">
                             <%= brandguide.colorDescription %>
                         </div>
@@ -118,11 +119,11 @@
     </div>
 </body>
 <script>
-    function hide(event){
-        
-      event.target.style.display = 'none'
-      
+    function hide(event) {
+
+        event.target.style.display = 'none'
+
     }
-    </script>
+</script>
 
 </html>

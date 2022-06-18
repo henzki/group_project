@@ -23,16 +23,12 @@
             <a onclick="myFunction()" id="modeSwitcher" class="mode-switcher">Night mode</a>
         </div>
         <div class="topnav-centered">
-            <a class="nav-link" href="/index" style="margin-left: 400px;">Brand guides</a>
-            <a class="nav-link" href="/add" style="margin-left: 100px;">New brand guide</a>
-            <a class="nav-link" href="/share" style="margin-left: 100px;" class="active">Share brand guide</a>
+            <a href="/index" style="margin-left: 400px;">Brand guides</a>
+            <a href="/add" style="margin-left: 100px;">New brand guide</a>
+            <a href="/share" style="margin-left: 100px;" class="active">Share brand guide</a>
         </div>
-
-
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
+
     <div class=main>
         <div class="flex-container-2">
 
@@ -68,8 +64,8 @@
                                         </div>
 
                                         <input type="text" value="http://localhost:5000/view/<%= row._id %>"
-                                            id="myInput" class="link-first">
-                                        <a onclick="myFunctionFirst()" class="link-second"><img src="../images/link.png"
+                                            id="<%= row._id %>" class="link-first">
+                                        <a onclick="myFunctionFirst(document.getElementById('<%= row._id %>'))" class="link-second"><img src="../images/link.png"
                                                 width="15px" height="15px">
                                             copy</a>
                                         <p>(Note: to gain access to shared link authorization is not required)</p>
@@ -98,17 +94,11 @@
             }
         }
 
-        var modal = document.getElementById('id01');
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        function myFunctionFirst() {
+        var copyText = document.getElementById('id01');
+
+        function myFunctionFirst(copyText) {
             /* Get the text field */
-            var copyText = document.getElementById("myInput");
 
             /* Select the text field */
             copyText.select();

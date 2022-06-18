@@ -101,9 +101,10 @@ body {
     border-left: 2px solid #505050;
 }
 
-.mode-switcher {
+.mode-switcher{
     cursor: pointer;
 }
+
 
 /*-------------------------------NAVIGATION END------------------------------------------*/
 
@@ -155,6 +156,10 @@ body {
 .flex-image {
     border: 2px solid #505050;
     border-radius: 20px;
+}
+
+.crud-buttons {
+    padding: 5px;
 }
 
 /*-------------------------------SHARE PAGE------------------------------------------*/
@@ -212,6 +217,7 @@ input[type=submit] {
     border-bottom-right-radius: 15px 15px;
     border-left: black;
     position: absolute;
+    cursor: pointer;
 
 
 }
@@ -237,6 +243,7 @@ input[type=submit] {
 
 /*---------------------MESSAGE FOR ADDING, UPDATING AND DELETING END--------------------------*/
 
+/*--------------------------MODAL-------------------------------*/
 button {
     background-color: white;
     color: white;
@@ -322,7 +329,9 @@ hr {
     margin-bottom: 25px;
 }
 
-/*Add button*/
+/*--------------------------MODAL END-------------------------------*/
+
+/*------------------------BUTTONS------------------------------*/
 
 .add-button {
     padding: 125px;
@@ -342,3 +351,5 @@ hr {
     display: table;
     clear: both;
 }
+
+/*------------------------BUTTONS END------------------------------*/

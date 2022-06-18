@@ -16,6 +16,10 @@ p {
     font-size: 18px;
 }
 
+.add-panel {
+    padding-top: 100px;
+}
+
 /*-------------------------------DARK MODE------------------------------------------*/
 
 .dark-mode {
@@ -140,7 +144,23 @@ input[type=radio] {
     vertical-align: middle;
 }
 
+.layout-images {
+    margin-left: 20px;
+    mix-blend-mode: difference;
+  }
+
+.input-creator {
+    margin-top: 50px;
+}
+
+.input-font {
+    margin-bottom: 50px;
+}
+
+
 /*--------------------INPUT END---------------------------*/
+
+/*--------------------DRAG'N'DROP END---------------------------*/
 
 .file-upload {
     background-color: #ffffff;
@@ -251,3 +271,5 @@ input[type=radio] {
     border: 0;
     transition: all .2s ease;
 }
+
+/*--------------------DRAG'N'DROP END---------------------------*/

@@ -24,6 +24,11 @@ body {
     width: 50%;
 }
 
+.logout-button {
+    width: 100%;
+    text-align: center;
+}
+
 /*-------------------------------DARK MODE------------------------------------------*/
 
 .dark-mode {
@@ -36,7 +41,7 @@ body {
 }
 
 .dark-mode .topnav {
-    border-bottom: 2px solid #cecece; 
+    border-bottom: 2px solid #cecece;
 }
 
 .dark-mode .border-left {
@@ -44,22 +49,22 @@ body {
 }
 
 .dark-mode .buttons {
-  background-color: #cecece;
+    background-color: #cecece;
 }
 
 .dark-mode .flex-image {
-    border: 2px solid #cecece; 
+    border: 2px solid #cecece;
 }
 
 .dark-mode img {
     border-radius: 200px;
-    background-color: #cecece; 
-    border: 2px solid #cecece; 
+    background-color: #cecece;
+    border: 2px solid #cecece;
 }
 
 .dark-mode input[type=submit] {
     color: black;
-    background-color: #cecece; 
+    background-color: #cecece;
 }
 
 /*-------------------------------DARK MODE------------------------------------------*/
@@ -79,6 +84,7 @@ input[type=submit] {
     color: white;
     background-color: black;
 }
+
 /*-------------------------------INPUTS------------------------------------------*/
 /*--------------NAVIGATION---------------------------*/
 
@@ -120,4 +126,5 @@ input[type=submit] {
 .mode-switcher {
     cursor: pointer;
 }
+
 /*--------------NAVIGATION---------------------------*/

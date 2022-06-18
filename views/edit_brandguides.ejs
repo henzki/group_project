@@ -98,8 +98,7 @@
 <body>
     <div class="<%= brandguide.layout %>nav">
         <div class="<%= brandguide.layout %>nav-logo">
-            <a href="#"><img src="/uploads/image/<%= brandguide.firstimage %>" alt="Davinci text"
-                    style="width:200px;height:200;"></a>
+            <a href="#"><img src="/uploads/image/<%= brandguide.firstimage %>" alt="Main logo"></a>
         </div>
         <div class="<%= brandguide.layout %>nav-items">
             <a href="#" class="<%= brandguide.layout %>active"><span>Intro</span></a>
@@ -128,7 +127,7 @@
                 <div>
                     <div>
                         <div>
-                            <h1>Edit '<%= brandguide.name %>' brandguide</h1>
+                            <h1>Edit ' <%= brandguide.name %> ' brandguide</h1>
                         </div>
                         <div>
                             <form action="/update/<%= brandguide._id %> " method="post" id="add-form"
@@ -145,10 +144,10 @@
                                     </div>
                                     <input class="form-label" type="file" class="hide_file" name="firstimage" />
                                     <br>
-                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="200" style="padding-top: 20px; />
+                                    <img src="/uploads/image/<%= brandguide.firstimage %> " width="200"
+                                        class="image-upload-current" />
 
-                                        <input type=" hidden" name="old_firstimage"
-                                        value="<%= brandguide.firstimage %> " />
+                                    <input type="hidden" name="old_firstimage" value="<%= brandguide.firstimage %> " />
                                 </div>
 
                                 <div>
@@ -162,7 +161,7 @@
                                     <input type="text" name="creator" value="<%= brandguide.creator %>"
                                         placeholder="Enter creator" required />
                                 </div>
-                                <div style="margin-bottom: 50px;">
+                                <div class="font-panel">
                                     <h4>Font color:</h4>
                                     <input class="radio" type="radio" name="fontcolor" value="black">
                                     <label>Black</label>
@@ -182,20 +181,20 @@
                                 </div>
                                 <p>* Supports CSS color names, HEX, RGB, RGBA, HSL, HSLA, Predifined/cross-browser
                                     color names</p>
-                                <div class="layout">
 
+                                <div class="layout">
                                     <h4>Layout:</h4>
                                     <input class="radio" type="radio" name="layout" value="side">
                                     <img src="../images/side-layout-white.png" width="190px" height="120px"
-                                        style="margin-left:20px; mix-blend-mode: difference; ">
+                                        class="layout-images">
                                     <input class="radio" type="radio" name="layout" value="top"
                                         style="margin-left: 50px;">
                                     <img src="../images/top-layout-white.png" width="190px" height="120px"
-                                        style="margin-left:20px; mix-blend-mode: difference;">
+                                        class="layout-images">
                                 </div>
                                 <div class="accordion" id="logo">
                                     <h2>
-                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <img src="../images/down.png" width="50px" height="35px" class="accordion-logo">
                                         <%= brandguide.logoHeader %>
                                     </h2>
                                 </div>
@@ -222,7 +221,7 @@
                                         <input class="form-label" type="file" class="hide_file" name="logoimage" />
                                         <br>
                                         <img src="/uploads/logoimage/<%= brandguide.logoimage %> " width="200"
-                                            style="padding-top: 40px;" />
+                                            class="image-upload-current" />
                                     </div>
                                     <input type="hidden" name="old_logoimage" value="<%= brandguide.logoimage %> " />
                                     <p>* Image will be displayed in 1000*600px</p>
@@ -231,7 +230,7 @@
 
                                 <div class="accordion" id="font">
                                     <h2>
-                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <img src="../images/down.png" width="50px" height="35px" class="accordion-logo">
                                         <%= brandguide.fontHeader %>
                                     </h2>
                                 </div>
@@ -253,7 +252,7 @@
                                     <input class="form-label" type="file" class="hide_file" name="fontimage" />
                                     <br>
                                     <img src="/uploads/fontimage/<%= brandguide.fontimage %> " width="200"
-                                        style="padding-top: 40px;" />
+                                        class="image-upload-current" />
 
 
 
@@ -263,10 +262,10 @@
 
                                 <div class="accordion" id="colors">
                                     <h2>
-                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <img src="../images/down.png" width="50px" height="35px" class="accordion-logo">
                                         <%= brandguide.colorsHeader %>
                                     </h2>
-                                    
+
                                 </div>
                                 <div class="panel">
                                     <div>
@@ -286,7 +285,7 @@
                                     <input class="form-label" type="file" class="hide_file" name="colorsimage" />
                                     <br>
                                     <img src="/uploads/colorsimage/<%= brandguide.colorsimage %> " width="200"
-                                        style="padding-top: 40px;" />
+                                        class="image-upload-current" />
 
                                     <input type="hidden" name="old_colorsimage"
                                         value="<%= brandguide.colorsimage %> " />
@@ -295,7 +294,7 @@
 
                                 <div class="accordion" id="media">
                                     <h2>
-                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <img src="../images/down.png" width="50px" height="35px" class="accordion-logo">
                                         <%= brandguide.mediaHeader %>
                                     </h2>
                                 </div>
@@ -317,14 +316,14 @@
                                     <input class="form-label" type="file" class="hide_file" name="mediaimage" />
                                     <br>
                                     <img src="/uploads/mediaimage/<%= brandguide.mediaimage %> " width="200"
-                                        style="padding-top: 40px;" />
+                                        class="image-upload-current" />
                                     <p>* Image will be displayed in 1000*600px</p>
                                 </div>
 
 
                                 <div class="accordion" id="more">
                                     <h2>
-                                        <img src="../images/down.png" width="50px" height="35px" style=" margin-right:20px; mix-blend-mode: difference;" >
+                                        <img src="../images/down.png" width="50px" height="35px" class="accordion-logo">
                                         Optionals
                                     </h2>
                                 </div>
@@ -347,7 +346,7 @@
                                     <input class="form-label" type="file" class="hide_file" name="optionalOneimage" />
                                     <br>
                                     <img src="/uploads/optionalOneimage/<%= brandguide.optionalOneimage %> " width="200"
-                                        style="padding-top: 40px;" />
+                                        class="image-upload-current" />
 
                                     <input type="hidden" name="old_optionalOneimage"
                                         value="<%= brandguide.optionalOneimage %> " />
@@ -371,7 +370,7 @@
                                     <input class="form-label" type="file" class="hide_file" name="optionalTwoimage" />
                                     <br>
                                     <img src="/uploads/optionalTwoimage/<%= brandguide.optionalTwoimage %> " width="200"
-                                        style="padding-top: 40px;" />
+                                        class="image-upload-current" />
 
                                     <input type="hidden" name="old_optionalTwoimage"
                                         value="<%= brandguide.optionalTwoimage %> " />

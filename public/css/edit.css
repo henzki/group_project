@@ -186,6 +186,20 @@ input[type=file] {
   vertical-align: middle;
 }
 
+.image-upload-current {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.font-panel {
+  margin-bottom: 50px;
+}
+
+.layout-images {
+  margin-left: 20px;
+  mix-blend-mode: difference;
+}
+
 /*-----------------------------INPUT-END----------------------------------------*/
 
 /*-----------------------------CONTENT------------------------------------------*/
@@ -380,6 +394,8 @@ input[type=file] {
   }
 }
 
+/*------------------------ACCORDION------------------------------*/
+
 .accordion {
   cursor: pointer;
   width: 100%;
@@ -395,3 +411,10 @@ input[type=file] {
   overflow: hidden;
   transition: all .15s ease-in-out;
 }
+
+.accordion-logo {
+  margin-right: 20px;
+  mix-blend-mode: difference;
+}
+
+/*------------------------ACCORDION END------------------------------*/

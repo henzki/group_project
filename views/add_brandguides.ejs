@@ -22,15 +22,10 @@
             <a onclick="myFunction()" id="modeSwitcher" class="mode-switcher">Night mode</a>
         </div>
         <div class="topnav-centered">
-            <a class="nav-link" href="/index" style="margin-left: 400px;">Brand guides</a>
-            <a class="nav-link" href="/add" style="margin-left: 100px;"><span>New brand guide</span></a>
-            <a class="nav-link" href="/share" style="margin-left: 100px;">Share brand guide</a>
+            <a href="/index" style="margin-left: 400px;">Brand guides</a>
+            <a href="/add" style="margin-left: 100px;"><span>New brand guide</span></a>
+            <a href="/share" style="margin-left: 100px;">Share brand guide</a>
         </div>
-
-
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
 
     <div class="addmain">
@@ -38,7 +33,7 @@
             <div class="row">
                 <div>
                     <div>
-                        <div style="padding-top: 100px;">
+                        <div class="add-panel">
                             <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
                                 <div>
                                     <label for="name">Project name:</label>
@@ -67,17 +62,17 @@
                                 </div>
                                 <p>* Logo will be displayed in 300*300px</p>
 
-                                <div style="margin-top: 50px;">
+                                <div class="input-creator">
                                     <label for="bgcolor">Creator:</label>
                                     <input type="text" name="creator" />
                                 </div>
-                                <div style="margin-bottom: 50px;">
+                                <div class="input-font">
                                     <h4>Font Color</h4>
                                     <input class="radio" type="radio" name="fontcolor" value="black" checked>
-                                    <label style="margin-left: 20px; font-size:23px;">Black</label>
+                                    <label>Black</label>
                                     <input class="radio" type="radio" name="fontcolor" value="white"
                                         style="margin-left: 50px;">
-                                    <label style="margin-left: 20px; font-size:23px;">White</label>
+                                    <label>White</label>
                                 </div>
 
                                 <div>
@@ -103,6 +98,8 @@
                                     <img src="../images/top-layout-black.png" width="190px" height="120px"
                                         style="margin-left:20px;">
                                 </div>
+
+                                
 
                                 <input type="submit" name="submit" value="Add project" />
                         </div>
